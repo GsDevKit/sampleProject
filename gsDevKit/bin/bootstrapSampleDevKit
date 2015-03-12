@@ -65,20 +65,20 @@ popd >& /dev/null
 
 # Copy the sample project project entry to $GS_HOME/tode/sys/local/project, replacing ${gitRoot} with ${sampleHome}
 filename=sample.ston
-cat ${sampleHome}/gsDevKit/${filename} | sed s/\$\{sampleHome\}/${sampleHome}/ > $GS_HOME/tode/sys/local/server/scripts/${filename})
+cat ${sampleHome}/gsDevKit/${filename} | sed s_\$\{sampleHome\}_${sampleHome}_ > $GS_HOME/tode/sys/local/server/scripts/${filename}
 
 # Setting things up to bootstrap GemStone and Pharo from local git clones
 #   Copy server script templates to $GS_HOME/sys/local/server/scripts, replacing ${gitRoot} with ${sampleGitRoot}
 for filename in  $sampleHOME/gsDevKit/tode/sys/local/server/scripts; do
-  cat $filename | sed s/\$\{gitRoot\}/${sampleGitRoot}/ > $GS_HOME/tode/sys/local/server/scripts/$(basename "$filename")
+  cat $filename | sed s_\$\{gitRoot\}_${sampleGitRoot}_ > $GS_HOME/tode/sys/local/server/scripts/$(basename "$filename")
 done
 
 #   Copy project entry templates to $GS_HOME/tode/sys/local/project, replacing ${gitRoot} with ${sampleGitRoot}
 for filename in  $sampleHOME/gsDevKit/tode/sys/local/projects; do
-  cat $filename | sed s/\$\{gitRoot\}/${sampleGitRoot}/ > $GS_HOME/tode/sys/local/projects/$(basename "$filename")
+  cat $filename | sed s_\$\{gitRoot\}_${sampleGitRoot}_ > $GS_HOME/tode/sys/local/projects/$(basename "$filename")
 done
 
 #   Copy pharo bootstrap templates to  $GS_HOME/tode/sys/local/pharo, replacing ${gitRoot} with ${sampleGitRoot}
 for filename in  $sampleHOME/gsDevKit/tode/sys/local/pharo; do
-  cat $filename | sed s/\$\{gitRoot\}/${sampleGitRoot}/ > $GS_HOME/tode/sys/local/pharo/$(basename "$filename")
+  cat $filename | sed s_\$\{gitRoot\}_${sampleGitRoot}_ > $GS_HOME/tode/sys/local/pharo/$(basename "$filename")
 done
