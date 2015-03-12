@@ -1,25 +1,25 @@
-#! /bin/bash
+#! /bin/bash -x
 #=========================================================================
 # Copyright (c) 2015 GemTalk Systems, LLC <dhenrich@gemtalksystems.com>.
 #=========================================================================
 
 usage() {
   cat <<HELP
-USAGE: $(basename $0) [-h] 
+USAGE: $(basename $0) [-h] <sample-project-git-root>
 Bootstrap the Sample project. Clone the set of GitHub projects used by the
 Sample project. Set up the tODe and GsDevKitHome infrastructure for the
-Sample project.
+Sample project in $GS_HOME based on the templates in <sample-project-git-root>.
 
-This script should be run after cloning the gsDevKitHome repository and 
-checking out your project branch (see 
-https://github.com/GsDevKit/gsDevKitHome/tree/master#clone-gsdevkithome).
+This script should be run once to do the initial cloning of github 
+repositories and to set up the sample project directory structure in 
+$GS_HOME.
 
 OPTIONS
   -h show usage
 
 EXAMPLES
   $(basename $0) -h
-  $(basename $0)
+  $(basename $0) $SAMPLE_HOME
 
 HELP
 }
@@ -30,10 +30,15 @@ if [ "${GS_HOME}x" = "x" ] ; then
 fi
 source ${GS_HOME}/bin/shFunctions
 
+if [ $# -ne 1 ]; then
+  usage; exit 1
+fi
+sampleHome=$1
+
 getOpts_help $@ #parse standard (-h) options
 
 # clone git repositories
-cd /opt/git
+cd $sampleHOME/gsDevKit/git
 if [ ! -d glass ]; then
   git clone git@github.com:glassdb/glass.git
 fi
@@ -57,10 +62,10 @@ if [ ! -d zinc ]; then
 fi
 
 # copy project entries to /sys/local/projects directory - referencing local git clones
-cp $GS_HOME/projects/sample/tode/sys/local/projects/* $GS_HOME/tode/sys/local/projects
+cp $sampleHOME/gsDevKit/tode/sys/local/projects/* $GS_HOME/tode/sys/local/projects
 
 # Setting things up to bootstrap GemStone and Pharo from local git clones
 #   Copy GemStone bootstrap scripts to $GS_HOME/tode/sys/local/server/scripts and 
 #   Pharo client bootstrap script to $GS_HOME/pharo
-cp $GS_HOME/projects/sample/tode/sys/local/server/scripts/* $GS_HOME/tode/sys/local/server/scripts
-cp $GS_HOME/projects/sample/pharo/todeLode.st $GS_HOME/pharo
+cp $sampleHOME/gsDevKit/tode/sys/local/server/scripts/* $GS_HOME/tode/sys/local/server/scripts
+cp $sampleHOME/gsDevKit/pharo/todeLode.st $GS_HOME/pharo

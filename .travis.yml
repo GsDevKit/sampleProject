@@ -1,0 +1,27 @@
+language: erlang
+
+env:
+
+  - GS_VERSION=3.1.0.6 TEST=Basic
+  - GS_VERSION=3.2.4   TEST=Basic
+
+before_script:
+  - export SAMPLE_HOME=="$(pwd)"
+  - export GS_TRAVIS=true
+  - sudo apt-get update -qq
+  - sudo apt-get -y install libpam0g:i386
+  - sudo ln -s /lib/i386-linux-gnu/libpam.so.0 /lib/libpam.so.0
+  - sudo apt-get install -qq gcc-multilib libcurl3:i386 libstdc++6:i386
+  - sudo ln -s /usr/lib/i386-linux-gnu/libstdc++.so.6 /usr/lib/i386-linux-gnu/libstdc++.so
+  - wget -q -O gsDevKitHome.zip https://github.com/GsDevKit/gsDevKitHome/archive/dev.zip    # change this to master after gsDevKitHome 1.0.0 release
+  - unzip -q gsDevKitHome.zip
+  - cd dalehenrich-gsDevKitHome*
+  - export GS_HOME="$(pwd)"
+  - export PATH=$GS_HOME/bin:$PATH
+  - cd $SAMPLE_HOME
+  - cd gsDevKit/bin
+  - export PATH="$(pwd)"/bin:$PATH
+  - cd $SAMPLE_HOME
+
+script:
+  - tests/testTravisCI.sh
