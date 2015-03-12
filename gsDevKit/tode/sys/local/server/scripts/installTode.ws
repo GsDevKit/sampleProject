@@ -5,6 +5,6 @@ Transcript
 GsDeployer bulkMigrate: [ 
   Metacello new
     baseline: 'Tode';
-    repository: 'filetree:///opt/git/tode/repository';
+    repository: 'filetree://${gitRoot}/tode/repository';
     get;
     load: 'GemStone Dev' ]

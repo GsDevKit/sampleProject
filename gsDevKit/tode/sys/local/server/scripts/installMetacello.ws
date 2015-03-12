@@ -2,10 +2,10 @@
  Install Metacello from local git clone."
 Transcript 
   cr; 
-  show: 'Lock Metacello: filetree:///opt/git/metacello-work/repository'.
+  show: 'Lock Metacello: filetree://${gitRoot}/metacello-work/repository'.
 GsDeployer bulkMigrate: [
   Metacello new
     baseline: 'Metacello';
-    repository: 'filetree:///opt/git/metacello-work/repository';
+    repository: 'filetree://${gitRoot}/metacello-work/repository';
     lock ].
 ].

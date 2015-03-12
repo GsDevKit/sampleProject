@@ -2,12 +2,12 @@
  Install GLASS1 from local git clone."
 Transcript
   cr;
-  show: 'Lock GLASS1: filetree:///opt/git/glass/repository'.
+  show: 'Lock GLASS1: filetree://${gitRoot}/glass/repository'.
 GsDeployer
    bulkMigrate: [ 
      Metacello new
        baseline: 'GLASS1';
-       repository: 'filetree:///opt/git/glass/repository';
+       repository: 'filetree://${gitRoot}/glass/repository';
        lock ].
 Transcript
     cr;
