@@ -1,6 +1,6 @@
 TDObjectGatewayNode{#name:'zinc',#contents:'^ TDProjectSpecEntryDefinition new
     baseline: \'ZincHTTPComponents\'
-      repository: \'filetree:///opt/git/zinc/repository\'
+      repository: \'filetree://${gitRoot}/zinc/repository\'
       loads: #(\'Core\' \'Tests\');
     status: #(#\'inactive\');
     locked: true;

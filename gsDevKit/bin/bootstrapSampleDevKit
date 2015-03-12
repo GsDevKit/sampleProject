@@ -34,11 +34,12 @@ if [ $# -ne 1 ]; then
   usage; exit 1
 fi
 sampleHome=$1
+sampleGitRoot=${sampleHome}/gsDevKit/git
 
 getOpts_help $@ #parse standard (-h) options
 
 # clone git repositories
-cd $sampleHOME/gsDevKit/git
+pushd $sampleGitRoot >& /dev/null
 if [ ! -d glass ]; then
   git clone git@github.com:glassdb/glass.git
 fi
@@ -60,12 +61,24 @@ fi
 if [ ! -d zinc ]; then
   git clone git@github.com:GsDevKit/zinc.git
 fi
+popd >& /dev/null
 
-# copy project entries to /sys/local/projects directory - referencing local git clones
-cp $sampleHOME/gsDevKit/tode/sys/local/projects/* $GS_HOME/tode/sys/local/projects
+# Copy the sample project project entry to $GS_HOME/tode/sys/local/project, replacing ${gitRoot} with ${sampleHome}
+filename=sample.ston
+cat ${sampleHome}/gsDevKit/${filename} | sed s/\$\{sampleHome\}/${sampleHome}/ > $GS_HOME/tode/sys/local/server/scripts/${filename})
 
 # Setting things up to bootstrap GemStone and Pharo from local git clones
-#   Copy GemStone bootstrap scripts to $GS_HOME/tode/sys/local/server/scripts and 
-#   Pharo client bootstrap script to $GS_HOME/pharo
-cp $sampleHOME/gsDevKit/tode/sys/local/server/scripts/* $GS_HOME/tode/sys/local/server/scripts
-cp $sampleHOME/gsDevKit/pharo/todeLode.st $GS_HOME/pharo
+#   Copy server script templates to $GS_HOME/sys/local/server/scripts, replacing ${gitRoot} with ${sampleGitRoot}
+for filename in  $sampleHOME/gsDevKit/tode/sys/local/server/scripts; do
+  cat $filename | sed s/\$\{gitRoot\}/${sampleGitRoot}/ > $GS_HOME/tode/sys/local/server/scripts/$(basename "$filename")
+done
+
+#   Copy project entry templates to $GS_HOME/tode/sys/local/project, replacing ${gitRoot} with ${sampleGitRoot}
+for filename in  $sampleHOME/gsDevKit/tode/sys/local/projects; do
+  cat $filename | sed s/\$\{gitRoot\}/${sampleGitRoot}/ > $GS_HOME/tode/sys/local/projects/$(basename "$filename")
+done
+
+#   Copy pharo bootstrap templates to  $GS_HOME/tode/sys/local/pharo, replacing ${gitRoot} with ${sampleGitRoot}
+for filename in  $sampleHOME/gsDevKit/tode/sys/local/pharo; do
+  cat $filename | sed s/\$\{gitRoot\}/${sampleGitRoot}/ > $GS_HOME/tode/sys/local/pharo/$(basename "$filename")
+done

@@ -1,6 +1,6 @@
 TDObjectGatewayNode{#name:'seaside',#contents:'^ TDProjectSpecEntryDefinition new
     baseline: \'Seaside3\'
-      repository: \'filetree:///opt/git/sample/repository\'
+      repository: \'filetree://${sampleHome}/repository\'
       loads: #(\'default\');
     status: #(#\'active\');
     locked: true;
