@@ -49,9 +49,6 @@ fi
 if [ ! -d metacello-work ]; then
   git clone git@github.com:dalehenrich/metacello-work.git
 fi
-if [ ! -d sample ]; then
-  git clone --branch gsDevKitHome git@github.com:dalehenrich/sample.git
-fi
 if [ ! -d Seaside31 ]; then
   git clone git@github.com:GsDevKit/Seaside31.git
 fi
