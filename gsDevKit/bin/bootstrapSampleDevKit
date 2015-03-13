@@ -39,7 +39,7 @@ sampleGitRoot=${sampleHOME}/gsDevKit/git
 getOpts_help $@ #parse standard (-h) options
 
 # clone git repositories
-pushd $sampleGitRoot >& /dev/null
+pushd $sampleGitRoot
 if [ ! -d glass ]; then
   git clone git@github.com:glassdb/glass.git
 fi
@@ -58,7 +58,7 @@ fi
 if [ ! -d zinc ]; then
   git clone git@github.com:GsDevKit/zinc.git
 fi
-popd >& /dev/null
+popd
 
 # Setting things up to bootstrap GemStone and Pharo from local git clones
 #   Copy server script templates to $GS_HOME/sys/local/server/scripts, replacing ${gitRoot} with ${sampleGitRoot}
@@ -66,7 +66,7 @@ for filename in  ${sampleHOME}/gsDevKit/tode/sys/local/server/scripts/* ; do
   cat $filename | sed s_\$\{gitRoot\}_${sampleGitRoot}_ > $GS_HOME/tode/sys/local/server/scripts/$(basename "$filename")
 done
 
-# Copy the sample project project entry to $GS_HOME/tode/sys/local/projects, replacing ${gitRoot} with ${sampleHome}
+# Copy the sample project project entry to $GS_HOME/tode/sys/local/projects, replacing ${gitRoot} with ${sampleHOME}
 filename=sample.ston
 cat ${sampleHOME}/gsDevKit/${filename} | sed s_\$\{sampleHome\}_${sampleHOME}_ > $GS_HOME/tode/sys/local/projects/${filename}
 

@@ -3,10 +3,12 @@
 # Copyright (c) 2015 GemTalk Systems, LLC <dhenrich@gemtalksystems.com>.
 #=========================================================================
 
+scriptDir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 usage() {
   cat <<HELP
 USAGE: $(basename $0) [-h] <stone-name>
-Load Pier300 into <stone-name>. 
+Load sampleProject into <stone-name>. 
 
 tODE must be installed before running this script.
 
@@ -15,7 +17,7 @@ OPTIONS
 
 EXAMPLES
   $(basename $0) -h
-  $(basename $0) pier
+  $(basename $0) sample
 
 HELP
 }
@@ -35,6 +37,6 @@ fi
 stoneName="$1"
 
 $GS_HOME/bin/tode todeIt $stoneName << EOF
-mount @/sys/stone/dirs/gsDevKitHome/projects/pier3 /home pier # mount the pier directory in tODE
-/home/pier/install300
+mount ${scriptDir}/../gsDevKit/tode/home /home sample # mount the sample home directory in tODE
+/home/sample/install
 EOF
