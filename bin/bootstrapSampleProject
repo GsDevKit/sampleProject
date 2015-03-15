@@ -7,7 +7,7 @@ sampleHOME=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )
 
 usage() {
   cat <<HELP
-USAGE: $(basename $0) [-h] 
+USAGE: $(basename $0) [-h]
 Bootstrap the Sample project. Clone the set of GitHub projects used by the
 Sample project. Set up the tODE and GsDevKitHome infrastructure for the
 Sample project in $GS_HOME based on the templates in the gsDevKit directory.
@@ -20,6 +20,7 @@ OPTIONS
 
 EXAMPLES
   $(basename $0) -h
+  $(basename $0)
 
 HELP
 }
