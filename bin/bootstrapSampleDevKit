@@ -67,12 +67,10 @@ for filename in  ${sampleHOME}/gsDevKit/tode/sys/local/server/scripts/* ; do
 done
 
 # Copy the sample project project entry to $GS_HOME/tode/sys/local/projects, replacing ${gitRoot} with ${sampleHOME}
-filename=sample.ston
-cat ${sampleHOME}/gsDevKit/${filename} | sed s_\$\{sampleHome\}_${sampleHOME}_ > $GS_HOME/tode/sys/local/projects/${filename}
-
-#   Copy project entry templates to $GS_HOME/tode/sys/local/projects, replacing ${gitRoot} with ${sampleGitRoot}
+#   Copy project entry templates to $GS_HOME/tode/sys/local/projects, replacing ${gitRoot} 
+#     with the value of ${sampleGitRoot} and ${sampleHome} with the value of ${sampleHOME}
 for filename in  ${sampleHOME}/gsDevKit/tode/sys/local/projects/* ; do
-  cat $filename | sed s_\$\{gitRoot\}_${sampleGitRoot}_ > $GS_HOME/tode/sys/local/projects/$(basename "$filename")
+  cat $filename | sed s_\$\{sampleHome\}_${sampleHOME}_ | sed s_\$\{gitRoot\}_${sampleGitRoot}_ > $GS_HOME/tode/sys/local/projects/$(basename "$filename")
 done
 
 #   Copy pharo bootstrap templates to  $GS_HOME/tode/sys/local/pharo, replacing ${gitRoot} with ${sampleGitRoot}
