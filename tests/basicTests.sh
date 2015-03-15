@@ -5,12 +5,8 @@
 
 set -e  # exit on error
 
-# install GemStone and create the tODEClient Pharo image
-$GS_HOME/bin/installGemStone $GS_VERSION
-$GS_HOME/bin/createTodeImage
-
 # bootstrap the gsDevKit artifacts
-$SAMPLE_HOME/gsDevKit/bin/bootstrapSampleDevKit $SAMPLE_HOME
+$SAMPLE_HOME/gsDevKit/bin/bootstrapSampleDevKit
 
 # create a sample stone
-$SAMPLE_HOME/gsDevKit/bin/createSampleStone sample
+$SAMPLE_HOME/gsDevKit/bin/installSampleServer sample $GS_VERSION

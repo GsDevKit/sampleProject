@@ -3,12 +3,14 @@
 # Copyright (c) 2015 GemTalk Systems, LLC <dhenrich@gemtalksystems.com>.
 #=========================================================================
 
+sampleHOME=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )
+
 usage() {
   cat <<HELP
-USAGE: $(basename $0) [-h] <sample-project-git-root>
+USAGE: $(basename $0) [-h] 
 Bootstrap the Sample project. Clone the set of GitHub projects used by the
-Sample project. Set up the tODe and GsDevKitHome infrastructure for the
-Sample project in $GS_HOME based on the templates in <sample-project-git-root>.
+Sample project. Set up the tODE and GsDevKitHome infrastructure for the
+Sample project in $GS_HOME based on the templates in the gsDevKit directory.
 
 This script should be run once to do the initial cloning of github 
 repositories and to set up the sample project directory structure in 
@@ -19,7 +21,6 @@ OPTIONS
 
 EXAMPLES
   $(basename $0) -h
-  $(basename $0) $SAMPLE_HOME
 
 HELP
 }
@@ -30,11 +31,7 @@ if [ "${GS_HOME}x" = "x" ] ; then
 fi
 source ${GS_HOME}/bin/shFunctions
 
-if [ $# -ne 1 ]; then
-  usage; exit 1
-fi
-sampleHOME=$1
-sampleGitRoot=${sampleHOME}/gsDevKit/git
+sampleGitRoot=${sampleHOME}/git
 
 getOpts_help $@ #parse standard (-h) options
 
