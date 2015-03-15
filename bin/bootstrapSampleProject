@@ -30,7 +30,7 @@ if [ "${GS_HOME}x" = "x" ] ; then
 fi
 source ${GS_HOME}/bin/shFunctions
 
-sampleGitRoot=${sampleHOME}/git
+sampleGitRoot=${GS_HOME}/tode/sys/local/git
 
 getOpts_help $@ #parse standard (-h) options
 
