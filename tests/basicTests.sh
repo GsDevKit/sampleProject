@@ -6,4 +6,4 @@
 set -e  # exit on error
 
 # create a sample stone
-$SAMPLE_HOME/bin/installServer sample $GS_VERSION
+$SAMPLE_HOME/bin/installSampleServer sample $GS_VERSION

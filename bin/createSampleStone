@@ -3,22 +3,20 @@
 # Copyright (c) 2015 GemTalk Systems, LLC <dhenrich@gemtalksystems.com>.
 #=========================================================================
 
-scriptDir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+sampleHomeBin=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 usage() {
   cat <<HELP
-USAGE: $(basename $0) [-h] <stone-name>
-Load sampleProject into <stone-name>. 
-
-tODE must be installed before running this script.
+USAGE: $(basename $0) [-h] <stone-name> <gemstone-version> 
+Create a new stone named <stone-name> with tODE and Sample project installed.
 
 OPTIONS
-  -h show usage
+  -h display help
 
 EXAMPLES
   $(basename $0) -h
-  $(basename $0) sample
-
+  $(basename $0) pier 3.1.0.6
+"
 HELP
 }
 
@@ -27,16 +25,14 @@ if [ "${GS_HOME}x" = "x" ] ; then
   echo "the GS_HOME environment variable needs to be defined"; exit 1
 fi
 source ${GS_HOME}/bin/shFunctions
+getOpts_help $@
 
-getOpts_help $@ #parse standard (-h) options
-
-if [ $# -ne 1 ]; then
+if [ $# -ne 2 ]; then
   usage; exit 1
 fi
-
 stoneName="$1"
+gsvers="$2"
 
-$GS_HOME/bin/tode todeIt $stoneName << EOF
-mount ${scriptDir}/../gsDevKit/tode/home /home sample # mount the sample home directory in tODE
-/home/sample/install
-EOF
+$GS_HOME/bin/createTodeStone $stoneName $gsvers
+
+$sampleHomeBin/installSampleStone $stoneName

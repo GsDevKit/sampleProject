@@ -37,11 +37,11 @@ fi
 stoneName="$1"
 gsvers="$2"
 
-$sampleHomeBin/bootstrapProject
+$sampleHomeBin/bootstrapSampleProject
 
 $GS_HOME/bin/installGemStone $gsvers
 
 $GS_HOME/bin/createTodeImage
 
-$sampleHomeBin/createStone $stoneName $gsvers
+$sampleHomeBin/createSampleStone $stoneName $gsvers
 
