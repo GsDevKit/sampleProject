@@ -7,20 +7,16 @@ sampleHomeBin=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 usage() {
   cat <<HELP
-USAGE: $(basename $0) [-h] <stone-name> <gemstone-version>
-Install GemStone/S, create a sample stone, start the stone, 
-create a todeClient image. Runs the $GS_HOME/installGemstone,  
-$GS_HOME/createTodeImage, $sampleHomeBin/createSampleStone,
-$GS_HOME/startStone,  $GS_HOME/startNetldi,  
-$sampleHomeBin/installSampleStone and todeClient scripts.
+USAGE: $(basename $0) [-h] <stone-name> <gemstone-version> 
+Create a new stone named <stone-name> with tODE and Sample project installed.
 
 OPTIONS
   -h display help
 
 EXAMPLES
-   $(basename $0) -h
-   $(basename $0) kit 3.2.1
-
+  $(basename $0) -h
+  $(basename $0) pier 3.1.0.6
+"
 HELP
 }
 
@@ -37,9 +33,6 @@ fi
 stoneName="$1"
 gsvers="$2"
 
-$GS_HOME/bin/installGemStone $gsvers
+$GS_HOME/bin/createTodeStone $stoneName $gsvers
 
-$GS_HOME/bin/createTodeImage
-
-$sampleHomeBin/createSampleStone $stoneName $gsvers
-
+$sampleHomeBin/installStone $stoneName

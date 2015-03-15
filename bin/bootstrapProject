@@ -12,9 +12,8 @@ Bootstrap the Sample project. Clone the set of GitHub projects used by the
 Sample project. Set up the tODE and GsDevKitHome infrastructure for the
 Sample project in $GS_HOME based on the templates in the gsDevKit directory.
 
-This script should be run once to do the initial cloning of github 
-repositories and to set up the sample project directory structure in 
-$GS_HOME.
+The script may be run multiple times as the clones and project structure are 
+not updaded, if key parts of the sctructure already exists in $Gs_HOME.
 
 OPTIONS
   -h show usage
@@ -60,17 +59,33 @@ popd
 # Setting things up to bootstrap GemStone and Pharo from local git clones
 #   Copy server script templates to $GS_HOME/sys/local/server/scripts, replacing ${gitRoot} with ${sampleGitRoot}
 for filename in  ${sampleHOME}/gsDevKit/tode/sys/local/server/scripts/* ; do
-  cat $filename | sed s_\$\{gitRoot\}_${sampleGitRoot}_ > $GS_HOME/tode/sys/local/server/scripts/$(basename "$filename")
+  newFilename=$GS_HOME/tode/sys/local/server/scripts/$(basename "$filename")
+  if [ -e ${newFilename} ]; then
+     echo "Skipping installation of ${newFilename} as the file already exists"
+  else
+    cat $filename | sed s_\$\{gitRoot\}_${sampleGitRoot}_ > $newFilename
+  fi
 done
+
 
 # Copy the sample project project entry to $GS_HOME/tode/sys/local/projects, replacing ${gitRoot} with ${sampleHOME}
 #   Copy project entry templates to $GS_HOME/tode/sys/local/projects, replacing ${gitRoot} 
 #     with the value of ${sampleGitRoot} and ${sampleHome} with the value of ${sampleHOME}
 for filename in  ${sampleHOME}/gsDevKit/tode/sys/local/projects/* ; do
-  cat $filename | sed s_\$\{sampleHome\}_${sampleHOME}_ | sed s_\$\{gitRoot\}_${sampleGitRoot}_ > $GS_HOME/tode/sys/local/projects/$(basename "$filename")
+  newFilename=$GS_HOME/tode/sys/local/projects/$(basename "$filename")
+  if [ -e ${newFilename} ]; then
+     echo "Skipping installation of ${newFilename} as the file already exists"
+  else
+    cat $filename | sed s_\$\{sampleHome\}_${sampleHOME}_ | sed s_\$\{gitRoot\}_${sampleGitRoot}_ > $newFilename
+  fi
 done
 
 #   Copy pharo bootstrap templates to  $GS_HOME/tode/sys/local/pharo, replacing ${gitRoot} with ${sampleGitRoot}
 for filename in  ${sampleHOME}/gsDevKit/tode/sys/local/pharo/* ; do
-  cat $filename | sed s_\$\{gitRoot\}_${sampleGitRoot}_ > $GS_HOME/tode/sys/local/pharo/$(basename "$filename")
+  newFilename=$GS_HOME/tode/sys/local/pharo/$(basename "$filename")
+  if [ -e ${newFilename} ]; then
+     echo "Skipping installation of ${newFilename} as the file already exists"
+  else
+    cat $filename | sed s_\$\{gitRoot\}_${sampleGitRoot}_ > ${newFilename}
+  fi
 done

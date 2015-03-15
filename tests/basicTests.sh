@@ -5,8 +5,5 @@
 
 set -e  # exit on error
 
-# bootstrap the gsDevKit artifacts
-$SAMPLE_HOME/gsDevKit/bin/bootstrapSampleDevKit
-
 # create a sample stone
-$SAMPLE_HOME/gsDevKit/bin/installSampleServer sample $GS_VERSION
+$SAMPLE_HOME/bin/installServer sample $GS_VERSION
