@@ -8,4 +8,3 @@ GsDeployer bulkMigrate: [
     baseline: 'Metacello';
     repository: 'filetree://${gitRoot}/metacello-work/repository';
     lock ].
-].
