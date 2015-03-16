@@ -8,7 +8,7 @@ baseline: spec
         baseline: 'Seaside3'
           with: [ 
               spec
-                repository: 'github://GsDevKit/Seaside31:3.1.?/repository'
+                repository: 'github://GsDevKit/Seaside31:3.1.?/repository';
                 loads: #('Development' 'Zinc' 'Examples') ];
         baseline: 'ZincHTTPComponents'
           with: [ 
