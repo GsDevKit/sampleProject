@@ -4,4 +4,4 @@ TDObjectGatewayNode{#name:'zinc',#contents:'^ TDProjectSpecEntryDefinition new
       loads: #(\'Core\' \'Tests\');
     status: #(#\'inactive\');
     locked: true;
-    yourself '}
+    yourself'}

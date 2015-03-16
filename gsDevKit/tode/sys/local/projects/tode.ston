@@ -4,4 +4,4 @@ TDObjectGatewayNode{#name:'tode',#contents:'^ TDProjectSpecEntryDefinition new
     loads: \'GemStone Dev\';
   status: #(#\'inactive\');
   locked: true;
-  yourself}
+  yourself'}
