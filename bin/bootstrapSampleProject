@@ -37,22 +37,34 @@ getOpts_help $@ #parse standard (-h) options
 
 # clone git repositories
 pushd $sampleGitRoot
-if [ ! -d glass ]; then
+if [ -d glass ]; then
+  echo "skipping clone of git@github.com:glassdb/glass.git ... already exists"
+else
   git clone git@github.com:glassdb/glass.git
 fi
-if [ ! -d Grease ]; then
+if [ -d Grease ]; then
+  echo "skipping clone of git@github.com:GsDevKit/Grease.git ... already exists"
+else
   git clone git@github.com:GsDevKit/Grease.git
 fi
-if [ ! -d metacello-work ]; then
+if [ -d metacello-work ]; then
+  echo "skipping clone of clone git@github.com:dalehenrich/metacello-work.git ... already exists"
+else
   git clone git@github.com:dalehenrich/metacello-work.git
 fi
-if [ ! -d Seaside31 ]; then
+if [ -d Seaside31 ]; then
+  echo "skipping clone of git@github.com:GsDevKit/Seaside31.git ... already exists"
+else
   git clone git@github.com:GsDevKit/Seaside31.git
 fi
-if [ ! -d tode ]; then
+if [ -d tode ]; then
+  echo "skipping clone of git@github.com:dalehenrich/tode.git ... already exists"
+else
   git clone --branch dev git@github.com:dalehenrich/tode.git
 fi
-if [ ! -d zinc ]; then
+if [ -d zinc ]; then
+  echo "skipping clone of git@github.com:GsDevKit/zinc.git ... already exists"
+else
   git clone git@github.com:GsDevKit/zinc.git
 fi
 popd
