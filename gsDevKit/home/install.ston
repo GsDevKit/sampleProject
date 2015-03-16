@@ -1,5 +1,5 @@
 TDTopezLeafNode{#name:'install',#contents:'project refresh --locked                                      # ensure that new project entries are used
-project load SampleProject                                    # load SampleProject project
+project load Sample                                           # load SampleProject project
 project list                                                  # refresh the project list
 /home/sample/gemServer --register=zinc --port=8585            # register Swazoo Seaside server
 bu backup sample.dbf                                          # make a backup after load completes
