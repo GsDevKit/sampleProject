@@ -37,6 +37,6 @@ fi
 stoneName="$1"
 
 $GS_HOME/bin/tode todeIt $stoneName << EOF
-mount ${sampleHome}/gsDevKit/tode/home /home sample # mount the sample home directory in tODE
+mount ${sampleHOME}/gsDevKit/tode/home /home sample # mount the sample home directory in tODE
 /home/sample/install
 EOF
