@@ -21,7 +21,11 @@
     version: #dev;
     repository: 'filetree://', gs_home, '/repository';
     get;
-    load  ]
+    load.
+  Metacello image
+    baseline: 'Tode';
+    get;
+    load.   ]
       on: Warning
       do: [:ex | Transcript cr; show: ex description ].
 

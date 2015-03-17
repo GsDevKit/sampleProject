@@ -5,24 +5,27 @@
 
 usage() {
   cat <<HELP
-USAGE: $(basename $0) [-h] <stone-name> [--help] [--register=zinc|fastcgi|swazoo] [--port=<port-number>] \
-                      [--start] [--stop] [--restart]
+USAGE: $(basename $0) [-h] <stone-name> [--help] [--register=<gem-server-name> \
+                      [--type=zinc|fastcgi|swazoo] [--port=<port-number>] \
+                      [--start=<gem-server-name>] [--stop=<gem-server-name>] \
+                      [--restart=<gem-server-name>]
 Register/start/stop/restart a webServer.
 
 OPTIONS
   -h show usage
-  --help                         show webServer tODE script help
-  --register=zinc|fastcgi|swazoo choose type of webServer to register. swazoo is best choice for development.
-  --port=<port-number>           define http port
-  --start                        start the registered web server
-  --stop                         stop the registered web server
-  --restart                      restart the registered web server
+  --help                       show gemServer tODE script help
+  --register=<gem-server-name> choose type of webServer to register. swazoo is best choice for development.
+  --type=zinc|fastcgi|swazoo   choose type of webServer to register. swazoo is best choice for development.
+  --port=<port-number>         define http port
+  --start=<gem-server-name>    start the named gem server
+  --stop=<gem-server-name>     stop the named gem server
+  --restart=<gem-server-name>  restart the named gem server
 
 EXAMPLES
   $(basename $0) -h
-  $(basename $0) sample --register=swazoo --port=8585
-  $(basename $0) sample --restart
-  $(basename $0) sample --stop
+  $(basename $0) register=sample --type=swazoo --port=8686
+  $(basename $0) --restart=sample
+  $(basename $0) --stop=sample
 
 HELP
 }

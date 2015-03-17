@@ -19,7 +19,7 @@ OPTIONS
 
 EXAMPLES
    $(basename $0) -h
-   $(basename $0) kit 3.2.1
+   $(basename $0) sample 3.2.4
 
 HELP
 }
