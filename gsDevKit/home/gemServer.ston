@@ -37,15 +37,15 @@ TDScriptLeafNode{#name:'gemServer',#contents:'[ :topez :objIn :tokens :command :
                     at: \'type\'
                     ifPresent: [ :adaptor | 
                       adaptor = \'zinc\'
-                        ifTrue: [ gemServerClass := ZnSeasideNewGemServer ]
+                        ifTrue: [ gemServerClass := Smalltalk at: #\'ZnSeasideNewGemServer\' ]
                         ifFalse: [ 
                           adaptor = \'fastcgi\'
-                            ifTrue: [ gemServerClass := FastCGISeasideGemServer ]
+                            ifTrue: [ gemServerClass := Smalltalk at: #\'FastCGISeasideGemServer\' ]
                             ifFalse: [ 
                               adaptor = \'swazoo\'
-                                ifTrue: [ gemServerClass := SwazooSeasideGemServer ]
+                                ifTrue: [ gemServerClass := Smalltalk at: #\'SwazooSeasideGemServer\' ]
                                 ifFalse: [ self error: \'unknown  adaptor type: \' , adaptor printString ] ] ] ]
-                    ifAbsent: [ gemServerClass := ZnSeasideGemServer ].
+                    ifAbsent: [ gemServerClass := Smalltalk at: #ZnSeasideNewGemServer ].
                   gemServer := (gemServerClass register: serverName) yourself ].
               opts
                 at: \'port\'
@@ -154,4 +154,4 @@ EXAMPLES
   ./gemServer --restart=seaside
 
 \'
-        topez: topez ] ]',#creationTime:DateAndTime['2015-01-15T16:57:31.775855064392-08:00'],#modificationTime:DateAndTime['2015-01-16T11:56:16.3552780151367-08:00']}
+        topez: topez ] ]',#creationTime:DateAndTime['2015-01-15T16:57:31.775855064392-08:00'],#modificationTime:DateAndTime['2015-03-18T15:42:02.1782128810882-07:00']}

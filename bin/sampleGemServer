@@ -14,8 +14,8 @@ Register/start/stop/restart a webServer.
 OPTIONS
   -h show usage
   --help                       show gemServer tODE script help
-  --register=<gem-server-name> choose type of webServer to register. swazoo is best choice for development.
-  --type=zinc|fastcgi|swazoo   choose type of webServer to register. swazoo is best choice for development.
+  --register=<gem-server-name> register gemserver as <gem-server-name>
+  --type=zinc|fastcgi|swazoo   choose type of webServer to register. zinc is best choice for development.
   --port=<port-number>         define http port
   --start=<gem-server-name>    start the named gem server
   --stop=<gem-server-name>     stop the named gem server
@@ -23,9 +23,9 @@ OPTIONS
 
 EXAMPLES
   $(basename $0) -h
-  $(basename $0) register=sample --type=swazoo --port=8686
-  $(basename $0) --restart=sample
-  $(basename $0) --stop=sample
+  $(basename $0) sample --register=sample --type=zinc --port=8686
+  $(basename $0) sample --restart=sample
+  $(basename $0) sample --stop=sample
 
 HELP
 }
