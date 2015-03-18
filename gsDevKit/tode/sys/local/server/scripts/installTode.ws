@@ -1,5 +1,5 @@
 "Fourth and final step in tODE installation process: install tODE."
-Transcript cr; show: '---Step 2 of tODE bootstrap process: execute installTode.ws'.
+Transcript cr; show: '---Step 4 of tODE bootstrap process: execute installTode.ws'.
 Object bootstrapGsDevKitHandlingErrorsDuring: [
   Transcript
     cr;
@@ -10,5 +10,5 @@ Object bootstrapGsDevKitHandlingErrorsDuring: [
       repository: 'filetree://${gitRoot}/tode/repository';
       get;
       load: 'GemStone Dev'.
-  Object class removeSelector: #bootstrapGsDevKitHandlingErrorsDuring: ]
+  Object class removeSelector: #bootstrapGsDevKitHandlingErrorsDuring: ] ]
 
