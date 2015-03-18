@@ -1,7 +1,7 @@
 [ 
   "Sample project pharo todeLoad.st, lock and load Metacello using local git clone"
-  " ${$gitRoot} should be replaced by path to gitRoot for the sample project (typically $SAMPLE_HOME/gsDevKit/git)"
-  | gs_home metacello |
+  " ${$gitRoot} should be replaced by path to directory where local git clones are located."
+  | gs_home |
   Metacello new
     baseline: 'Metacello';
     repository: 'filetree://${gitRoot}/metacello-work/repository';
@@ -21,11 +21,7 @@
     version: #dev;
     repository: 'filetree://', gs_home, '/repository';
     get;
-    load.
-  Metacello image
-    baseline: 'Tode';
-    get;
-    load.   ]
+    load ]
       on: Warning
       do: [:ex | Transcript cr; show: ex description ].
 
