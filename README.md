@@ -5,6 +5,7 @@ Initial install:
 
 ```
 $SAMPLE_HOME/bin/installSampleServer sample 3.2.4
+$SAMPLE_HOME/bin/sampleGemServer sample --restart=sample
 ```
 
 Restart `sample` stone using the extent snapshot made immediately after the initial install: 

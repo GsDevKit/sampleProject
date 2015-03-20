@@ -45,5 +45,3 @@ $GS_HOME/bin/createTodeImage
 
 $sampleHomeBin/createSampleStone $stoneName $gsvers
 
-$sampleHomeBin/sampleGemServer sample --restart=sample
-
