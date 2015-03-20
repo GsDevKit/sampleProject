@@ -70,6 +70,10 @@ fi
 popd
 
 # Setting things up to bootstrap GemStone and Pharo from local git clones
+
+#   Copy client scripts to $GS_HOME/sys/local/client/scripts
+cp ${sampleHOME}/gsDevKit/tode/sys/local/client/scripts/* $GS_HOME/tode/sys/local/client/scripts
+
 #   Copy server script templates to $GS_HOME/sys/local/server/scripts, replacing ${gitRoot} with ${sampleGitRoot}
 for filename in  ${sampleHOME}/gsDevKit/tode/sys/local/server/scripts/* ; do
   newFilename=$GS_HOME/tode/sys/local/server/scripts/$(basename "$filename")
@@ -79,7 +83,6 @@ for filename in  ${sampleHOME}/gsDevKit/tode/sys/local/server/scripts/* ; do
     cat $filename | sed s_\$\{gitRoot\}_${sampleGitRoot}_ > $newFilename
   fi
 done
-
 
 # Copy the sample project project entry to $GS_HOME/tode/sys/local/projects, replacing ${gitRoot} with ${sampleHOME}
 #   Copy project entry templates to $GS_HOME/tode/sys/local/projects, replacing ${gitRoot} 
