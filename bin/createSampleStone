@@ -3,6 +3,10 @@
 # Copyright (c) 2015 GemTalk Systems, LLC <dhenrich@gemtalksystems.com>.
 #=========================================================================
 
+echo "================="
+echo "  Sample Project script: $(basename $0)"
+echo "================="
+
 sampleHomeBin=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 usage() {
