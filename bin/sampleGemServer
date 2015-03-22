@@ -4,7 +4,7 @@
 #=========================================================================
 
 echo "================="
-echo "  Sample Project script: $(basename $0)"
+echo "  Sample Project script: $(basename $0) $*"
 echo "================="
 
 usage() {
