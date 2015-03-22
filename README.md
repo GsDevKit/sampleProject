@@ -23,20 +23,18 @@ $GS_HOME/bin/stoneNewExtent -s $GS_HOME/gemstone/stones/sample/snapshots/extent0
 Create a second stone, using the extent snapshot made after creating the `sample` stone (note that the GemStone version used in this stone creation command, must match the gemstone used for the `sample` stone):
 
 ```
-$GS_HOME/bin/createStone -s $GS_HOME/gemstone/stones/sample/snapshots/extent0.sample.dbf sample2 3.2.4
+$GS_HOME/bin/createSampleStone -s $GS_HOME/gemstone/stones/sample/snapshots/extent0.sample.dbf sample2 3.2.4
 ```
 
 Install sample project, starting with the extent snapshot made after tode was create during `sample` install:
 ```
-$GS_HOME/bin/stoneNewExtent -s $GS_HOME/gemstone/stones/sample/snapshots/extent0.tode.dbf sample2
-$SAMPLE_HOME/bin/installSampleStone sample2
+$GS_HOME/bin/createSampleStone -s $GS_HOME/gemstone/stones/sample/snapshots/extent0.tode.dbf sample2 3.2.4
 ```
 
 Reinstall sample project in `sample` stone, starting with $GEMSTONE/bin/extent0.seaside.dbf:
 
 ```
-$GS_HOME/bin/stoneExtent sample
-$SAMPLE_HOME/bin/installSampleStone sample
+$GS_HOME/bin/createSampleStone -s $GEMSTONE/bin/extent0.seaside.dbf sample 3.2.4
 ```
 
 

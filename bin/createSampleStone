@@ -59,6 +59,6 @@ fi
 stoneName="$1"
 gsvers="$2"
 
-$GS_HOME/bin/createTodeStone $noRestartArg $snapshotFileArg $stoneName $gsvers
+$GS_HOME/bin/createStone $noRestartArg $snapshotFileArg $stoneName $gsvers
 
 $sampleHomeBin/installSampleStone $stoneName
