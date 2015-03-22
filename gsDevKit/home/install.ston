@@ -3,7 +3,7 @@ project load Sample                                            # load Sample pro
 project list                                                   # refresh the project list
 /home/sample/gemServer --register=sample type=zinc --port=8686 # register Zinc Seaside gem server
 commit                                                         # persist gemServer registration
-bu backup sample.dbf                                           # make a backup after load completes
-bu snapshot sample.dbf                                         # make a snapshot as well
+bu backup --safely sample.dbf                                  # make a backup of initial installation
+bu snapshot --safely sample.dbf                                # make a snapshot of initial installation
 ',#creationTime:DateAndTime['2015-02-22T17:16:42.70123791694641-08:00'],#modificationTime:DateAndTime['2015-02-26T16:07:05.12517404556274-08:00']}
 

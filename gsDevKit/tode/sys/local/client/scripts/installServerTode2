@@ -1,4 +1,0 @@
-bu backup tode.dbf       # make a backup of tODE install
-bu snapshot tode.dbf     # make a snapshot of tODE install (used as base in createSampleStone)
-script --script=setUpSys # set up the in-image tODE /sys structure
-bu backup home.dbf       # backup with /sys structures in place

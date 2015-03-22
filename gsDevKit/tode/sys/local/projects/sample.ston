@@ -1,4 +1,4 @@
-TDObjectGatewayNode{#name:'seaside',#contents:'^ TDProjectSpecEntryDefinition new
+TDObjectGatewayNode{#name:'sample',#contents:'^ TDProjectSpecEntryDefinition new
     baseline: \'Sample\'
       repository: \'filetree://${sampleHome}/repository\'
       loads: #(\'default\');

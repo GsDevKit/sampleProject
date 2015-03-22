@@ -29,14 +29,14 @@ $GS_HOME/bin/createStone -s $GS_HOME/gemstone/stones/sample/snapshots/extent0.sa
 Install sample project, starting with the extent snapshot made after tode was create during `sample` install:
 ```
 $GS_HOME/bin/stoneNewExtent -s $GS_HOME/gemstone/stones/sample/snapshots/extent0.tode.dbf sample2
-$SAMPLE_HOME/bin/installSample sample2
+$SAMPLE_HOME/bin/installSampleStone sample2
 ```
 
 Reinstall sample project in `sample` stone, starting with $GEMSTONE/bin/extent0.seaside.dbf:
 
 ```
 $GS_HOME/bin/stoneExtent sample
-$SAMPLE_HOME/bin/installSample sample
+$SAMPLE_HOME/bin/installSampleStone sample
 ```
 
 
