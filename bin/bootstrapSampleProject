@@ -41,6 +41,7 @@ getOpts_help $@ #parse standard (-h) options
 
 # clone git repositories
 pushd $sampleGitRoot
+
 if [ -d glass ]; then
   echo "skipping clone of git@github.com:glassdb/glass.git ... already exists"
 else
@@ -71,6 +72,32 @@ if [ -d zinc ]; then
 else
   git clone git@github.com:GsDevKit/zinc.git
 fi
+if [ -d Grease ]; then
+  echo "skipping clone of git@github.com:GsDevKit/Grease.git ... already exists"
+else
+  git clone git@github.com:GsDevKit/Grease.git
+fi
+if [ -d filetree ]; then
+  echo "skipping clone of git@github.com:dalehenrich/filetree.git ... already exists"
+else
+  git clone git@github.com:dalehenrich/filetree.git
+fi
+if [ -d gsApplicationTools ]; then
+  echo "skipping clone of git@github.com:GsDevKit/gsApplicationTools.git ... already exists"
+else
+  git clone git@github.com:GsDevKit/gsApplicationTools.git
+fi
+if [ -d rb ]; then
+  echo "skipping clone of git@github.com:dalehenrich/rb.git ... already exists"
+else
+  git clone git@github.com:dalehenrich/rb.git
+fi
+if [ -d ston ]; then
+  echo "skipping clone of git@github.com:GsDevKit/ston.git ... already exists"
+else
+  git clone git@github.com:GsDevKit/ston.git
+fi
+
 popd
 
 # Setting things up to bootstrap GemStone and Pharo from local git clones
