@@ -19,8 +19,6 @@
   Metacello new
     baseline: 'Tode';
     repository: 'filetree://${gitRoot}/tode/repository';
-    get;
-    load: 'GemStone Dev';
     lock.
   Metacello new
     configuration: 'TodeClient';
@@ -29,5 +27,7 @@
     get;
     load ]
       on: Warning
-      do: [:ex | Transcript cr; show: ex description ].
+      do: [:ex | 
+        Transcript cr; show: ex description.
+        ex resume ].
 
