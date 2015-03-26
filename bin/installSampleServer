@@ -41,6 +41,10 @@ fi
 stoneName="$1"
 gsvers="$2"
 
+# Do a trivial sudo to test we can and get the password prompt out of the way ... 
+# installGemStone will use sudo, but bootstrapSampleProject might take awhile
+sudo date
+
 $sampleHomeBin/bootstrapSampleProject
 
 $GS_HOME/bin/installGemStone $gsvers

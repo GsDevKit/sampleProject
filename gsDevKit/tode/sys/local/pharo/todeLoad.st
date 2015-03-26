@@ -17,6 +17,10 @@
     load.
   gs_home := Smalltalk os environment at: 'GS_HOME'.
   Metacello new
+    baseline: 'Tode';
+    repository: 'filetree://${gitRoot}/tode/repository';
+    lock.
+  Metacello new
     configuration: 'TodeClient';
     version: #dev;
     repository: 'filetree://', gs_home, '/repository';
