@@ -11,7 +11,7 @@ sampleHomeBin=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 usage() {
   cat <<HELP
-USAGE: $(basename $0) [-h] [-n] [-s <snapshot-file-path>] <stone-name> <gemstone-version> 
+USAGE: $(basename $0) [-h] [-f] [-n] [-s <snapshot-file-path>] <stone-name> <gemstone-version> 
 Create a new stone named <stone-name> with tODE and Sample project installed. Start stone
 and netldi unless -n is specified.
 
@@ -25,6 +25,9 @@ option to start the stone, the first time.
 OPTIONS
   -h 
      display help
+  -f
+     Force creation of new stone, by deleting 
+     $GS_HOME/gemstone/stone/<stone-name> directory if it exists
   -n
      No startStone, no startNetldi.
   -s <snapshot-file-path> 
@@ -44,9 +47,11 @@ fi
 
 snapshotFileArg=""
 noRestartArg=""
-while getopts "hns:" OPT ; do
+forceArg=""
+while getopts "fhns:" OPT ; do
   case "$OPT" in
     h) usage; exit 0;;
+    f) forceArg="-f";;
     n) noRestartArg=" -n ";;
     s) snapshotFileArg=" -s ${OPTARG} ";;
     *) usage; exit 1;;
@@ -60,6 +65,6 @@ fi
 stoneName="$1"
 gsvers="$2"
 
-$GS_HOME/bin/createStone $noRestartArg $snapshotFileArg $stoneName $gsvers
+$GS_HOME/bin/createStone $forceArg $noRestartArg $snapshotFileArg $stoneName $gsvers
 
 $sampleHomeBin/installSampleStone $stoneName

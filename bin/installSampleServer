@@ -11,18 +11,22 @@ sampleHomeBin=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 usage() {
   cat <<HELP
-USAGE: $(basename $0) [-h] <stone-name> <gemstone-version>
+USAGE: $(basename $0) [-h] [-f] <stone-name> <gemstone-version>
 Install GemStone/S, create a sample stone, start the stone, 
 create a todeClient image. Runs the $GS_HOME/installGemstone,  
 $GS_HOME/createTodeImage, $sampleHomeBin/createSampleStone,
 $GS_HOME/startStone,  $GS_HOME/startNetldi,  
 $sampleHomeBin/installSampleStone and todeClient scripts.
 
+With -f option, create new stone and tode client image, whether
+or not one is pre-existing or not.
+
 OPTIONS
   -h display help
 
 EXAMPLES
    $(basename $0) -h
+   $(basename $0) -f
    $(basename $0) sample 3.2.4
 
 HELP
@@ -32,8 +36,16 @@ set -e # exit on error
 if [ "${GS_HOME}x" = "x" ] ; then
   echo "the GS_HOME environment variable needs to be defined"; exit 1
 fi
-source ${GS_HOME}/bin/shFunctions
-getOpts_help $@
+
+forceArg=""
+while getopts "fhns:" OPT ; do
+  case "$OPT" in
+    h) usage; exit 0;;
+    f) forceArg="-f";;
+    *) usage; exit 1;;
+  esac
+done
+shift $(($OPTIND - 1))
 
 if [ $# -ne 2 ]; then
   usage; exit 1
@@ -49,7 +61,7 @@ $sampleHomeBin/bootstrapSampleProject
 
 $GS_HOME/bin/installGemStone $gsvers
 
-$GS_HOME/bin/createTodeImage
+$GS_HOME/bin/createTodeImage $forceArg
 
-$sampleHomeBin/createSampleStone $stoneName $gsvers
+$sampleHomeBin/createSampleStone $forceArg $stoneName $gsvers
 
