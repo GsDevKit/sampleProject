@@ -26,7 +26,7 @@ OPTIONS
 
 EXAMPLES
    $(basename $0) -h
-   $(basename $0) -f
+   $(basename $0) -f sample 3.2.4
    $(basename $0) sample 3.2.4
 
 HELP
