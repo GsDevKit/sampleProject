@@ -1,0 +1,7 @@
+TDObjectGatewayNode{#name:'rb',#contents:'^ TDProjectSpecEntryDefinition new
+  baseline: \'RB\'
+    repository: \'filetree://${gitRoot}/rb/repository\'
+    loads: \'AST-Core\';
+  status: #(#\'inactive\');
+  locked: true;
+  yourself'}

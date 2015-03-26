@@ -65,3 +65,4 @@ $GS_HOME/bin/createTodeImage $forceArg
 
 $sampleHomeBin/createSampleStone $forceArg $stoneName $gsvers
 
+echo "...finished $(basename $0)"

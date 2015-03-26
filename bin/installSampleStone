@@ -46,3 +46,5 @@ $GS_HOME/bin/tode todeIt $stoneName << EOF
 mount ${sampleHOME}/gsDevKit/home /home sample # mount the sample home directory in tODE
 /home/sample/install
 EOF
+
+echo "...finished $(basename $0)"

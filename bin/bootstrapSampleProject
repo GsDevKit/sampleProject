@@ -133,3 +133,5 @@ for filename in  ${sampleHOME}/gsDevKit/tode/sys/local/pharo/* ; do
     cat $filename | sed s_\$\{gitRoot\}_${sampleGitRoot}_ > ${newFilename}
   fi
 done
+
+echo "...finished $(basename $0)"
