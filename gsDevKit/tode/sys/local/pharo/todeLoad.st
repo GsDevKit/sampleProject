@@ -19,6 +19,8 @@
   Metacello new
     baseline: 'Tode';
     repository: 'filetree://${gitRoot}/tode/repository';
+    get;
+    load: 'GemStone Dev';
     lock.
   Metacello new
     configuration: 'TodeClient';
