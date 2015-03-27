@@ -23,10 +23,18 @@ GsUpgrader batchErrorHandlingDo: [
       repository: 'filetree://${gitRoot}/ston/repository';
       lock ].
 
+  Transcript 
+    cr; 
+    show: 'Lock Grease: filetree://${gitRoot}/Grease/repository'.
+  GsDeployer bulkMigrate: [
+    Metacello new
+      baseline: 'Grease';
+      repository: 'filetree://${gitRoot}/Grease/repository';
+      lock ].
+
   Transcript
     cr;
     show: '-----Install tODE from local git clone'.
-
   GsDeployer bulkMigrate: [ 
     Metacello new
       baseline: 'Tode';

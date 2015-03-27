@@ -15,12 +15,4 @@ GsUpgrader batchErrorHandlingDo: [
       repository: 'filetree://${gitRoot}/metacello-work/repository';
       lock ].
 
-  Transcript 
-    cr; 
-    show: 'Lock Grease: filetree://${gitRoot}/Grease/repository'.
-  GsDeployer bulkMigrate: [
-    Metacello new
-      baseline: 'Grease';
-      repository: 'filetree://${gitRoot}/Grease/repository';
-      lock ].
  ].
