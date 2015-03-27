@@ -9,7 +9,6 @@ GsUpgrader batchErrorHandlingDo: [
   Transcript 
     cr; 
     show: 'Lock Metacello: filetree://${gitRoot}/metacello-work/repository'.
-
   GsDeployer bulkMigrate: [
     Metacello new
       baseline: 'Metacello';
@@ -19,7 +18,6 @@ GsUpgrader batchErrorHandlingDo: [
   Transcript 
     cr; 
     show: 'Lock Grease: filetree://${gitRoot}/Grease/repository'.
-
   GsDeployer bulkMigrate: [
     Metacello new
       baseline: 'Grease';

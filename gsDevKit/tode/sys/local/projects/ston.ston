@@ -1,6 +1,6 @@
 TDObjectGatewayNode{#name:'ston',#contents:'^ TDProjectSpecEntryDefinition new
   baseline: \'Ston\'
-    repository: \'filetree://${gitRoot}/tode/repository\'
+    repository: \'filetree://${gitRoot}/ston/repository\'
     loads: \'Core\';
   status: #(#\'inactive\');
   locked: true;

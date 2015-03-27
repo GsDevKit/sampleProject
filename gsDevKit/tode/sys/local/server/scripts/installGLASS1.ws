@@ -9,13 +9,21 @@ GsUpgrader batchErrorHandlingDo: [
   Transcript
     cr;
     show: 'Lock GLASS1: filetree://${gitRoot}/glass/repository'.
-
   GsDeployer
     bulkMigrate: [ 
       Metacello new
         baseline: 'GLASS1';
         repository: 'filetree://${gitRoot}/glass/repository';
         lock ].
+
+  Transcript 
+    cr; 
+    show: 'Lock FileTree: filetree://${gitRoot}/filetree/repository'.
+  GsDeployer bulkMigrate: [
+    Metacello new
+      baseline: 'FileTree';
+      repository: 'filetree://${gitRoot}/filetree/repository';
+      lock ].
 
   Transcript
     cr;
