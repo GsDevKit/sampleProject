@@ -3,6 +3,10 @@ project load Sample                                              # load Sample p
 project list                                                     # refresh the project list
 project rehome GLASS1                                            # make sure all packages point to local git clone
 project rehome Metacello                                         # make sure all packages point to local git clone
+project rehome Grease                                            # make sure all packages point to local git clone
+project rehome FileTree                                          # make sure all packages point to local git clone
+project rehome RB                                                # make sure all packages point to local git clone
+project rehome Ston                                              # make sure all packages point to local git clone
 /home/sample/gemServer --register=sample --type=zinc --port=8686 # register Zinc Seaside gem server
 commit                                                           # persist gemServer registration
 bu backup --safely sample.dbf                                    # make a backup of initial installation
