@@ -24,5 +24,9 @@ GsUpgrader batchErrorHandlingDo: [
     Metacello new
       baseline: 'Grease';
       repository: 'filetree://${gitRoot}/Grease/repository';
+      get.
+    Metacello new
+      baseline: 'Grease';
+      repository: 'filetree://${gitRoot}/Grease/repository';
       lock ].
  ].
