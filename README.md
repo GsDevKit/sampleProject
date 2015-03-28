@@ -24,7 +24,7 @@ In 2012, Otto Behrens, mentioned in a post the the Pharo Development list:
 <a href="http://forum.world.st/Smalltalk-for-small-projects-only-tp4336237p4339381.html">
   <pre>We've built a little package that allows us to save all our source in git...</pre>
 </a>
-
+and that lead to...
 ## INSTALL Sample
 Initial install:
 
