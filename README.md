@@ -18,13 +18,14 @@ It is just not practical to share a single image with a group of developers.
 To share ones work then, the Smalltalk developer is forced to interact with the universe outside of the image.
 
 Over the years there have been a number of different approaches to source code control with varying degrees of success.
-Unfortunately, each Smalltalk dialect has tended to approach source code control from a different angle leading to what Kent Beck called [Smalltalk: Welcome to the Balkans][1].
+Unfortunately, each Smalltalk dialect has tended to approach source code control from a different angle leading to in 2010 what Kent Beck called [Smalltalk: Welcome to the Balkans][1].
 
-In 2012, Otto Behrens, mentioned in a post the the Pharo Development list:
+In 2012, Otto Behrens, mentioned in a post on the [Pharo Development list][5]:
 <a href="http://forum.world.st/Smalltalk-for-small-projects-only-tp4336237p4339381.html">
-  <pre>We've built a little package that allows us to save all our source in git...</pre>
+  <pre>"We've built a little package that allows us to save all our source in git..."</pre>
 </a>
-and that lead to...
+which lead to my [Practical Git for Smalltalk][2] talk ([video][4]) and subsequent [proposal for a cross-platform file format][7] at the [2012 STIC Conference][6].
+ 
 ## INSTALL Sample
 Initial install:
 
@@ -70,5 +71,8 @@ $SAMPLE_HOME/bin/createSampleStone -s $GEMSTONE/bin/extent0.seaside.dbf sample 3
 
 [1]: http://www.threeriversinstitute.org/blog/?p=466
 [2]: http://www.stic.st/wp-content/conferences/2012/Wednesday/1415-Practical_Git_for_Smalltalk-Henrichs.pdf
-[3]: http://forum.world.st/Smalltalk-for-small-projects-only-tp4336237p4339381.html
-[4]: https://guides.github.com/introduction/flow/
+[3]: https://youtu.be/ZIkoBQphtyM
+[5]: http://forum.world.st/Pharo-Smalltalk-Developers-f1294837.html
+[6]: http://www.stic.st/conferences/stic12/
+[7]: https://github.com/CampSmalltalk/Cypress/wiki#proposed-file-structure
+[8]: https://guides.github.com/introduction/flow/
