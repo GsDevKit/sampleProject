@@ -2,11 +2,20 @@
 
 GsDevKitHome and tODE are designed to provide a productive, git-based development environment for Smalltalk.
 
+1. [Introduction](#introduction)
+   - [Image-based Development](#imagebased-development)
+   - [Source Code Control](#source-code-control)
+   - [Git and GitHub](#git-and-github)
+2. [Merging image-based development and disk-based development](#merging-imagebased-development-and-diskbased-development)
+3. [Sample Project Installation](#sample-project-installation)
+
+##Introduction
 Git-based development for Smalltalk is a relatively new concept.
 Traditionally Smalltalk development environments have been hyper-focussed on image-based development.
 From a development perspective the universe outside of the image barely exists and the file system tends to be viewed as a necessary evil.
 The real action takes place inside the image.
 
+###Image-based Development
 The image-based development model is appealing because it provides the individual developer with a very productive enviroment.
 Not only does the developer have full access and control over the source code for her program, but more importantly the developer has full access to the run-time state of the program.
 And, as if that weren't enough, the image-based environment provides persistence as well.
@@ -17,16 +26,21 @@ While image-based development is very productive for individual developers, imag
 It is just not practical to share a single image with a group of developers.
 To share ones work then, the Smalltalk developer is forced to interact with the universe outside of the image.
 
+###Source Code Control
 Over the years there have been a number of different approaches to source code control with varying degrees of success.
 Unfortunately, each Smalltalk dialect has tended to approach source code control from a different angle leading to in 2010 what Kent Beck called [Smalltalk: Welcome to the Balkans][1].
 
+####Git and GitHub
 In 2012, Otto Behrens, mentioned in a post on the [Pharo Development list][5]:
 <a href="http://forum.world.st/Smalltalk-for-small-projects-only-tp4336237p4339381.html">
   <pre>"We've built a little package that allows us to save all our source in git..."</pre>
 </a>
-which lead to my [Practical Git for Smalltalk][2] talk ([video][4]) and subsequent [proposal for a cross-platform file format][7] at the [2012 STIC Conference][6].
+which lead to my [Practical Git for Smalltalk][2] talk ([video][4]) and subsequent [proposal for a cross-platform file format named *Cypress*][7] at the [2012 STIC Conference][6].
+Since then, [FileTree][8], an implementation of [Cypress][9] for [GemStone][10], [Pharo][11] and [Squeak][12], has been growing in popularity as Smalltalk developers discover the advantages of using [git][13] for source code control and [GitHub][14] for [collaboration][15].
  
-## INSTALL Sample
+##Merging image-based development and disk-based development
+
+##Sample Project Inatallation
 Initial install:
 
 ```
@@ -75,4 +89,13 @@ $SAMPLE_HOME/bin/createSampleStone -s $GEMSTONE/bin/extent0.seaside.dbf sample 3
 [5]: http://forum.world.st/Pharo-Smalltalk-Developers-f1294837.html
 [6]: http://www.stic.st/conferences/stic12/
 [7]: https://github.com/CampSmalltalk/Cypress/wiki#proposed-file-structure
-[8]: https://guides.github.com/introduction/flow/
+[8]: https://github.com/dalehenrich/filetree
+[9]: https://github.com/CampSmalltalk/Cypress#cypress-implementations
+[10]: http://gemtalksystems.com/small-business/gsdevkit/
+[11]: http://pharo.org/
+[12]: http://www.squeak.org/
+[13]: http://git-scm.com/
+[14]: https://github.com
+[15]: https://help.github.com/categories/collaborating/
+
+ https://guides.github.com/introduction/flow/
