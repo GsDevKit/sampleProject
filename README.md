@@ -23,7 +23,7 @@ Unfortunately, each Smalltalk dialect has tended to approach source code control
 In 2012, Otto Behrens, mentioned in a post the the Pharo Development list, that
 
 <a href="http://forum.world.st/Smalltalk-for-small-projects-only-tp4336237p4339381.html">
-<pre>We've built a little package that allows us to save all our source in git.</pre>
+  <pre>We've built a little package that allows us to save all our source in git.</pre>
 </a>
 
 ## INSTALL Sample
