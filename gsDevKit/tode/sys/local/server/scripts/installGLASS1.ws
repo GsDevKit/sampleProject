@@ -29,4 +29,15 @@ GsUpgrader batchErrorHandlingDo: [
     cr;
     show: '-----Upgrade GLASS1 using gsUpgrader'.
 
-  GsUpgrader upgradeGLASS1  ].
+  GsUpgrader upgradeGLASS1.
+
+  Transcript
+    cr;
+    show: '-----Lock and Load Grease: filetree://${gitRoot}/Grease/repository'.
+
+  GsDeployer bulkMigrate: [
+    Metacello new
+      baseline: 'Grease';
+      repository: 'filetree://${gitRoot}/Grease/repository';
+      onLock: [:ex | ex break ];
+      load: 'Grease-Core' ] ].
