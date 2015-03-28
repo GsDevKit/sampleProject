@@ -20,8 +20,7 @@ To share ones work then, the Smalltalk developer is forced to interact with the 
 Over the years there have been a number of different approaches to source code control with varying degrees of success.
 Unfortunately, each Smalltalk dialect has tended to approach source code control from a different angle leading to what Kent Beck called [Smalltalk: Welcome to the Balkans][1].
 
-In 2012, Otto Behrens, mentioned in a post the the Pharo Development list, that
-
+In 2012, Otto Behrens, mentioned in a post the the Pharo Development list:
 <a href="http://forum.world.st/Smalltalk-for-small-projects-only-tp4336237p4339381.html">
   <pre>We've built a little package that allows us to save all our source in git.</pre>
 </a>
