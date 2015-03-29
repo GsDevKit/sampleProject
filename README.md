@@ -8,7 +8,7 @@ GsDevKitHome and tODE are designed to provide a productive, git-based developmen
    - [Git for Smalltalk](#git-for-Smalltalk)
    - [Why Git?](#why-git)
    - [Beyond Source Code Control](#beyond-source-code-control)
-2. [Merging image-based development and disk-based development](#merging-imagebased-development-and-diskbased-development)
+2. [Getting Started with GsDevKitHome](#getting-started-with-gsdevkithome)
 3. [Sample Project Installation](#sample-project-installation)
 
 ##Introduction
@@ -47,15 +47,87 @@ For me there are three reasons why git is a superior choice for Smalltalk source
 2. Superior branching model.
 3. Superior [collaboration tools][15] with [GitHub][14].
 
-The is [plenty of debate about the *betst* source code control system][16], but at the end of the day, the collaboration tools from [GitHub][14] that makes git the primary target of my work.
+There is [plenty of debate about the *best* source code control system][16], but at the end of the day, it is the collaboration tools from [GitHub][14] that makes git the primary target of my work.
+
+##Getting Started with GsDevKitHome
+
+1. Familiarize yourself with GitHub tools. The following [GitHub tutorials][24] are **required reading**: 
+
+   1. If you are completely unfamiliar with using git and/or, the following are good resources for getting your
+      feet wet:
+
+      1. [GitHub Hello world tutorial][31] --- the entire tutorial is hosted in your web browser.
+      2. [git - the simple guide][32] --- short and to the point, this tutorial covers the very basic commit commands that you will use 90% of the time
+      3. [Try Git: Code School][33] --- looks like it covers the same commands as [git - the simple guide][32], but again is hosted completely in your browser.
+      4. [Git Reference manual][34] for more advanced reading.
+      5. Google is your friend. Once you are compfortable with the basics, if you run into a specific problem, it is likely that you will find the answer via google.
+ 
+   1. [Getting your project on GitHub][23]. 
+   2. [Understanding the GitHub workflow][22].
+   2. [Contributing to Open Source][26].
+   3. [Forking Projects][25].
+   4. [Mastering Issues][27].
+2. Familiarize yourself with [Travis-ci, a continuous integration server for GitHub][29].
+1. [Install GsDevKit/gsDevKitHome][30]
+3. Create a public or private GitHub repository for your project.
+   [Private GitHub repositories are available for as little as $7/month][28].
+2. Create git repository for you project. 
+4. Create a FileTree repository directory for your package files.
+5. Create a Metacello BaselineOf to define the package load order and project dependencies for your project.
+6. Create a set of GsDevKitHome bash scripts for creating custom GsDevKit stones
+7. Set
+
+---
+---
+
+####The GsDevKitHome Sample Project
+
+```
++-sampleProject\
+  +-bin\
+  +-gsDevKit\
+  +-repository\
+  +-tests\
+```
+
+####FileTree `repository` directory
+
+---
+---
+
+I been using git and github as my primary version control system for Smalltalk for the last three years.
+During that time I have become convinced that the combination of Git/GitHub provides a very powerful set of tools for Smalltalk development.
+With that said, the Smalltalk tool set has to undergo a fairly significant overhaul to leverage the advantages of Git and GitHub.
+[tODE has been under development since 2011][21] and in the last few years I've pushed the tODE toolset to specifically support a git/github-based workflow, but in addition to git/github support I have also been focussing on the fundamental problem of sharing development artifacts between image-based development environments via disk.
+
+
+What I am about to present to you is based on my experience using git/github as my primary Smalltalk version control over the last few years.
+
+
+
+
+ 1. Git/Github is powerful combination
+ 2. To effectively work with Git/GitHub in Smalltalk, tools specifically designed to work with git/github is crucial
+
+
+1. GitHub-based workflow for Smalltalk
+2. 
+
+
+---
+---
+
 
 ####Beyond Source Code Control
 A perennial problem for image-based Smalltalk development revolves around what to do with non-code artifacts, like external  documentation, data files and/or image files that are needed by an application.
 Witness these questions/answers for [Envy][18], [Monticello][20] and [Store][19] for insight into the relatively recent *state of the art*.
 
-Of course, with git or any other disk-based **version control system** (even the *old* ones), versioning files and directory structure is **what the do**.
+Of course, with git or any other disk-based **version control system** (even the *old* ones), versioning files and directory structure is **what they do**.
 
-##Merging image-based development and disk-based development
+##Sample Project
+The **Sample Project** is an illustration of my vision
+
+
 
 
 ##Sample Project Inatallation
@@ -117,9 +189,21 @@ $SAMPLE_HOME/bin/createSampleStone -s $GEMSTONE/bin/extent0.seaside.dbf sample 3
 [15]: http://code.tutsplus.com/articles/team-collaboration-with-github--net-29876
 [16]: http://blogs.atlassian.com/2012/03/git-vs-mercurial-why-git/
 [17]: https://help.github.com/categories/collaborating/
-
 [18]: http://computer-programming-forum.com/3-smalltalk/52166db0373d133f.htm
 [19]: http://comments.gmane.org/gmane.comp.lang.smalltalk.vwnc/21222
 [20]: https://gist.github.com/seandenigris/2582340
+[21]: https://github.com/dalehenrich/tode/blob/master/docs/videos/videoHistory.md
 
- https://guides.github.com/introduction/flow/
+[22]: https://guides.github.com/introduction/flow/
+[23]: https://guides.github.com/introduction/getting-your-project-on-github/
+[24]: https://guides.github.com/
+[25]: https://guides.github.com/activities/forking/
+[26]: https://guides.github.com/activities/contributing-to-open-source/
+[27]: https://guides.github.com/features/issues/
+[28]: https://github.com/pricing
+[29]: http://en.wikipedia.org/wiki/Travis_CI
+[30]: https://github.com/GsDevKit/gsDevKitHome/tree/master#open-source-development-kit-for-gemstones-64-bit-
+[31]: https://guides.github.com/activities/hello-world/
+[32]: http://rogerdudler.github.io/git-guide/
+[33]: https://try.github.io/levels/1/challenges/1
+[34]: http://git-scm.com/doc
