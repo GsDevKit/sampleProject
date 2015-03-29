@@ -51,7 +51,7 @@ There is [plenty of debate about the *best* source code control system][16], but
 
 ##Getting Started with GsDevKitHome
 
-1. If you are completely unfamiliar with using git and/or, the following are good resources for getting your
+1. If you are completely unfamiliar with using git and/or GitHub, then the following are good resources for getting your
    feet wet:
 
    1. [GitHub Hello world tutorial][31] --- the entire tutorial is hosted in your web browser.
@@ -67,6 +67,7 @@ There is [plenty of debate about the *best* source code control system][16], but
    2. [Contributing to Open Source][26].
    3. [Forking Projects][25].
    4. [Mastering Issues][27].
+
 2. Familiarize yourself with [Travis-ci, a continuous integration server for GitHub][29].
 1. [Install GsDevKit/gsDevKitHome][30]
 3. Create a public or private GitHub repository for your project.
