@@ -7,6 +7,7 @@ GsDevKitHome and tODE are designed to provide a productive, git-based developmen
    - [Source Code Control](#source-code-control)
    - [Git for Smalltalk](#git-for-Smalltalk)
    - [Why Git?](#why-git)
+   - [Beyond Source Code Control](#beyond-source-code-control)
 2. [Merging image-based development and disk-based development](#merging-imagebased-development-and-diskbased-development)
 3. [Sample Project Installation](#sample-project-installation)
 
@@ -48,7 +49,7 @@ For me there are three reasons why git is a superior choice for Smalltalk source
 
 The is [plenty of debate about the *betst* source code control system][16], but at the end of the day, the collaboration tools from [GitHub][14] that makes git the primary target of my work.
 
-####Beyond source code control
+####Beyond Source Code Control
 A perennial problem for image-based Smalltalk development revolves around what to do with non-code artifacts, like external  documentation, data files and/or image files that are needed by an application.
 Witness these questions/answers for [Envy][18], [Monticello][20] and [Store][19] for insight into the relatively recent *state of the art*.
 
