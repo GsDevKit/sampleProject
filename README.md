@@ -51,17 +51,17 @@ There is [plenty of debate about the *best* source code control system][16], but
 
 ##Getting Started with GsDevKitHome
 
+1. If you are completely unfamiliar with using git and/or, the following are good resources for getting your
+   feet wet:
+
+   1. [GitHub Hello world tutorial][31] --- the entire tutorial is hosted in your web browser.
+   2. [git - the simple guide][32] --- short and to the point, this tutorial covers the very basic commit commands that you will use 90% of the time
+   3. [Try Git: Code School][33] --- looks like it covers the same commands as [git - the simple guide][32], but again is hosted completely in your browser.
+   4. [Git Reference manual][34] for more advanced reading.
+   5. Google is your friend. Once you are compfortable with the basics, if you run into a specific problem, it is likely that you will find the answer via google.
+ 
 1. Familiarize yourself with GitHub tools. The following [GitHub tutorials][24] are **required reading**: 
 
-   1. If you are completely unfamiliar with using git and/or, the following are good resources for getting your
-      feet wet:
-
-      1. [GitHub Hello world tutorial][31] --- the entire tutorial is hosted in your web browser.
-      2. [git - the simple guide][32] --- short and to the point, this tutorial covers the very basic commit commands that you will use 90% of the time
-      3. [Try Git: Code School][33] --- looks like it covers the same commands as [git - the simple guide][32], but again is hosted completely in your browser.
-      4. [Git Reference manual][34] for more advanced reading.
-      5. Google is your friend. Once you are compfortable with the basics, if you run into a specific problem, it is likely that you will find the answer via google.
- 
    1. [Getting your project on GitHub][23]. 
    2. [Understanding the GitHub workflow][22].
    2. [Contributing to Open Source][26].
