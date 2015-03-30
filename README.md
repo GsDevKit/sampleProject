@@ -51,6 +51,7 @@ There is [plenty of debate about the *best* source code control system][16], but
 
 ##Getting Started with GsDevKitHome
 
+###Git, GitHub, Travis-CI
 1. If you are completely unfamiliar with using git and/or GitHub, then the following are good resources for getting your
    feet wet:
 
@@ -60,7 +61,7 @@ There is [plenty of debate about the *best* source code control system][16], but
    4. [Git Reference manual][34] for more advanced reading.
    5. Google is your friend. Once you are compfortable with the basics, if you run into a specific problem, it is likely that you will find the answer via google.
  
-1. Familiarize yourself with GitHub tools. The following [GitHub tutorials][24] are **required reading**: 
+2. Familiarize yourself with GitHub tools. The following [GitHub tutorials][24] are **required reading**: 
 
    1. [Getting your project on GitHub][23]. 
    2. [Understanding the GitHub workflow][22].
@@ -68,15 +69,63 @@ There is [plenty of debate about the *best* source code control system][16], but
    3. [Forking Projects][25].
    4. [Mastering Issues][27].
 
-2. Familiarize yourself with [Travis-ci, a continuous integration server for GitHub][29].
-1. [Install GsDevKit/gsDevKitHome][30]
-3. Create a public or private GitHub repository for your project.
+3. Familiarize yourself with [Travis-ci, a continuous integration server for GitHub][29].
+4. Create an initial git repository for you project. You don't need much more than a `README.md` file.
+5. Create a public or private GitHub repository for your project.
    [Private GitHub repositories are available for as little as $7/month][28].
-2. Create git repository for you project. 
-4. Create a FileTree repository directory for your package files.
-5. Create a Metacello BaselineOf to define the package load order and project dependencies for your project.
+
+###Getting your project on GsDevKitHome
+1. [Install GsDevKit/gsDevKitHome, create your first stone (kit) and log into your todeClient  (steps 1-6)][30]. 
+   The following discussions assume that you've [installed SSH on your server][37] and are [cloning github repositories using SSH][38].
+2. Define `GS_GIT_ROOT` environment variable as a convenience for copying a pasting subsequent bash shell commands.
+   If you don't already have a common root for your git clones, you can use `$GS_HOME/tode/sys/local/git`:
+
+   ```
+   cd $GS_HOME/tode/sys/local/git
+   export GS_GIT_ROOT=`pwd`
+   ```
+
+2. Clone the Sample project to your local disk:
+
+   ```
+   cd $GS_GIT_ROOT
+   git clone git@github.com:GsDevKit/sampleProject.git
+   ```
+
+2. Clone your GitHub project to your local disk:
+   
+   ```
+   cd $GS_GIT_ROOT
+   git clone git@github.com:<YourGitHubId>/<YourGitHubProject>.git
+   ```
+
+4. Create a [FileTree repository][8] directory for your package files :
+
+   ```
+   cd $GS_GIT_ROOT/<YourGitHubProject>
+   mkdir repository
+   cp $GS_GIT_ROOT/sampleProject/repository/.gitattributes repository
+   git add .
+   ```
+
+4. The following tODE shell commands creates and saves an initial BaselineOfYourProject class as well as an initial *project entry*: 
+
+   ```
+   mr create filetree://$GS_HOME/tode/sys/local/git/YourProjec/repository
+   mc create BaselineOfYourProject
+   mr add filetree://$GS_HOME/tode/sys/local/git/YourProject/repository BaselineOfYourProject
+   cls create BaselineOfYourProject BaselineOf BaselineOfYourProject
+   eval `BaselineOfYourProject compile: 'baseline: spec <baseline> spec for: #'common' do: [ "add project/package dependencies" ]' classified: 'baseline'`.
+   mc commit BaselineOfYourProject `initial commit`
+   project entry --baseline=YourProject --repo=filetree://$GS_HOME/tode/sys/local/git/YourProject/repository /home/stone/projects
+   project load YourProject
+   browse method --spec BaselineOfYourProject>>baseline:
+   ```
+
+5. Create a [Metacello BaselineOf][35] to define the package load order and project dependencies for your project.
 6. Create a set of GsDevKitHome bash scripts for creating custom GsDevKit stones
-7. Set
+
+
 
 ---
 ---
@@ -203,8 +252,13 @@ $SAMPLE_HOME/bin/createSampleStone -s $GEMSTONE/bin/extent0.seaside.dbf sample 3
 [27]: https://guides.github.com/features/issues/
 [28]: https://github.com/pricing
 [29]: http://en.wikipedia.org/wiki/Travis_CI
-[30]: https://github.com/GsDevKit/gsDevKitHome/tree/master#open-source-development-kit-for-gemstones-64-bit-
+[30]: https://github.com/GsDevKit/gsDevKitHome/tree/master#development-kit-server-installation
 [31]: https://guides.github.com/activities/hello-world/
 [32]: http://rogerdudler.github.io/git-guide/
 [33]: https://try.github.io/levels/1/challenges/1
 [34]: http://git-scm.com/doc
+[35]: https://github.com/dalehenrich/metacello-work/blob/master/docs/GettingStartedWithGitHub.md#create-baseline
+[36]: https://github.com/dalehenrich/tode/blob/dev/docs/releaseNotes/releaseNotes0.1.0.md#git-credentials-and-tode
+[37]: https://github.com/GsDevKit/gsDevKitHome/blob/dev/docs/osPrereqs/osPrereqs.md#ssh
+[38]: https://github.com/dalehenrich/tode/blob/dev/docs/releaseNotes/releaseNotes0.1.0.md#cloning-with-ssh
+
