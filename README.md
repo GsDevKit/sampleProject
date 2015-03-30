@@ -107,11 +107,11 @@ There is [plenty of debate about the *best* source code control system][16], but
 4. The following tODE shell commands creates and saves an initial BaselineOfYourProject class as well as an initial *project entry*: 
 
    ```
-   mr create filetree://$GS_HOME/tode/sys/local/git/YourProjec/repository
+   mr create filetree://$GS_HOME/tode/sys/local/git/YourProject/repository
    mc create BaselineOfYourProject
    mr add filetree://$GS_HOME/tode/sys/local/git/YourProject/repository BaselineOfYourProject
    cls create BaselineOfYourProject BaselineOf BaselineOfYourProject
-   eval `BaselineOfYourProject compile: 'baseline: spec <baseline> spec for: #'common' do: [ "add project/package dependencies" ]' classified: 'baseline'`.
+   eval `BaselineOfYourProject compile: 'baseline: spec <baseline>' classified: 'baseline'`.
    mc commit BaselineOfYourProject `initial commit`
    project entry --baseline=YourProject --repo=filetree://$GS_HOME/tode/sys/local/git/YourProject/repository /home/stone/projects
    project load YourProject
