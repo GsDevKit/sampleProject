@@ -40,9 +40,24 @@ others’ code through github.</pre></a>
 
 ###Git for GsDevKit
 ####FileTree
-In my [Practical Git for Smalltalk][1] talk at [the 2012 STIC Conference][2] ([slides][3] and [video][4]), I discuss how [FileTree][12] opens the door to using git for storing [Monticello][14] compatible packages on disk.
+In my [Practical Git for Smalltalk][1] talk at [the 2012 STIC Conference][2] ([slides][3] and [video][4]), I discuss how [FileTree][12] and the [Cypress disk format][13] opens the door to using git for storing [Monticello][14] compatible packages on disk.
 
 ####Metacello
+The [Metacello Scripting API][15] provides a way to identify GitHub and git-based repositories:
+
+```Smalltalk
+"Load the External project directly from the GitHub repository"
+Metacello new
+  baseline: 'External';
+  repository: 'github://dalehenrich/External:master/external/repository';
+  load.
+
+"Load the External project from a local clone of the GitHub repository"
+Metacello new
+  baseline: 'External';
+  repository: 'filetree:///opt/git/external/repository';
+  load.
+```
 
 ####tODE
 
@@ -67,5 +82,6 @@ In my [Practical Git for Smalltalk][1] talk at [the 2012 STIC Conference][2] ([s
 [10]: https://help.github.com/categories/collaborating/
 [11]: http://git-scm.com/book/en/v1/Git-Branching
 [12]: https://github.com/dalehenrich/filetree
-
+[13]: https://github.com/CampSmalltalk/Cypress/wiki#proposed-file-structure
 [14]: http://www.wiresong.ca/monticello/
+[15]: https://github.com/dalehenrich/metacello-work/blob/master/docs/MetacelloUserGuide.md#metacello-user-guide
