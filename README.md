@@ -53,7 +53,10 @@ Metacello new
   load.
 
 "Load the External project from a local clone of the GitHub repository:
-   `git clone https://dalehenrich/External.git`
+
+    git clone https://dalehenrich/External.git
+    cd External
+    git checkout master
 "
 Metacello new
   baseline: 'External';
