@@ -1,8 +1,15 @@
 #GsDevKit Workflow
 
 1. [Intro](#intro)
-2. [Install](#install)
-3. [Setup](#setup)
+   - [Git and GitHub](#git-and-github)
+   - [Git for GsDevKit](#git-for-gsdevkit)
+     - [FileTree](#filetree)
+     - [Metacello](#metacello)
+     - [tODE](#tode)
+   - [Git/Github Resources](#gitgithub-resources)
+2. [GsDevKit Sample Project](#gsdevkit-sample-project)
+   - [Install](#install)
+   - [Setup](#setup)
 4. [Basic Workflow](#basic-workflow)
 5. [Lessons](#lessons)
 
@@ -16,7 +23,8 @@ The real action for Smalltalkers takes place inside the image.
 Of course, there is no avoiding the action outside of the image.
 If you plan to use and/or contribute to open source projects it is necessary to share source code and collaborate with engineers who are working outside your workspace and likely to be outside of your timezone as well.
 
-In my [Practical Git for Smalltalk][1] talk at [the 2012 STIC Conference][2] ([slides][3] and [video][4]) and my [Of metacello, git, scripting and things][7] ([slides][8]) talk at [the 2012 ESUG conference][9],  I discuss in detail many of the reasons why I believe that the combination of [git][5] and [GitHub][6] is superior to any other source code management system available in Smalltalk today:
+###Git and GitHub
+In my [Of metacello, git, scripting and things][7] ([slides][8]) talk at [the 2012 ESUG conference][9], I discuss in detail many of the reasons why I believe that the combination of [git][5] and [GitHub][6] is superior to any other source code management system available in Smalltalk today:
 
 1. [Git has a superior branching model][11]:
 
@@ -30,8 +38,22 @@ lines of development takes seconds.</pre></a>
   <a href="http://kbroman.org/github_tutorial/pages/why.html#why-use-githubhttpgithubcom"><pre>Github lowers the barriers to collaboration. It’s easy to offer suggested changes to 
 others’ code through github.</pre></a>
 
-##Install
-##Setup
+###Git for GsDevKit
+####FileTree
+In my [Practical Git for Smalltalk][1] talk at [the 2012 STIC Conference][2] ([slides][3] and [video][4]), I discuss how [FileTree][12] opens the door to using git for source code control in Smalltalk:
+
+  - Cypress disk format and FileTree repository supports allows for the storage of Monticello compatible packages on disk, thus allowing one to use 
+
+####Metacello
+
+####tODE
+
+###Git/Github Resources
+
+##GsDevKit Sample Project
+
+###Install
+###Setup
 ##Basic Workflow
 ##Lessons
 
@@ -46,4 +68,4 @@ others’ code through github.</pre></a>
 [9]: http://www.esug.org/wiki/pier/Conferences/2012
 [10]: https://help.github.com/categories/collaborating/
 [11]: http://git-scm.com/book/en/v1/Git-Branching
-
+[12]: https://github.com/dalehenrich/filetree
