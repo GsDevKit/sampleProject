@@ -20,9 +20,7 @@ In my [Practical Git for Smalltalk][1] talk at [the 2012 STIC Conference][2] ([s
 In a nutshell, [git has a superior branching model][11]:
 
 <a href="http://git-scm.com/about">
-  <pre>The Git feature that really makes it stand apart from nearly every other SCM out there is its branching model.
- 
-  Git allows and encourages you to have multiple local branches that can be entirely independent of each other. The creation, merging, and deletion of those lines of development takes seconds.</pre>
+<pre>The Git feature that really makes it stand apart from nearly every other SCM out there is its branching model. Git allows and encourages you to have multiple local branches that can be entirely independent of each other. The creation, merging, and deletion of those lines of development takes seconds.</pre>
 </a>
 
 while [GitHub has a superior collaboration model][10]:
