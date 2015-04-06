@@ -11,7 +11,7 @@
 2. [GsDevKit Sample Project](#gsdevkit-sample-project)
    - [Install](#install)
    - [Setup](#setup)
-4. [Basic Workflow](#basic-workflow)
+4. [Basic GsDevKit Workflow](#basic-gsdevkit-workflow)
 5. [Lessons](#lessons)
 
 ##Intro
@@ -80,7 +80,8 @@ The [tODE development environment for GsDevKit][17] provides builtin support for
 ###Git Resources
 If you are not familiar with git, then the following resources should provide a good introduction:
 - [git - the simple guide][32] --- short and to the point, this tutorial covers the very basic commit commands that you will use 90% of the time
-- [Try Git: Code School][33] --- looks like it covers the same commands as [git - the simple guide][32], but again is hosted completely in your browser.
+- [Try Git: Code School][33] --- looks like it covers the same commands as [git - the simple guide][32], butis hosted completely in your browser.
+- [Download git][31]
 - [Git Reference manual][34] for more advanced reading.
 
 Google is your friend. Once you are compfortable with the basics, if you run into a specific problem, it is likely that you will find the answer via google.
@@ -98,7 +99,7 @@ If you are not familiar with GitHub, then the following [GitHub tutorials][24] a
 
 ###Install
 ###Setup
-##Basic Workflow
+##Basic GsDevKit Workflow
 ##Lessons
 
 [1]: http://www.stic.st/conferences/stic12/stic12-abstracts/practical-git-for-smalltalk/
@@ -128,6 +129,7 @@ If you are not familiar with GitHub, then the following [GitHub tutorials][24] a
 [26]: https://guides.github.com/activities/contributing-to-open-source/
 [27]: https://guides.github.com/features/issues/
 
+[31]: http://git-scm.com/downloads
 [32]: http://rogerdudler.github.io/git-guide/
 [33]: https://try.github.io/levels/1/challenges/1
 [34]: http://git-scm.com/doc
