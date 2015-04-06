@@ -6,7 +6,8 @@
      - [FileTree](#filetree)
      - [Metacello](#metacello)
      - [tODE](#tode)
-   - [Git/Github Resources](#gitgithub-resources)
+   - [Git Resources](#git-resources)
+   - [Github Resources](#github-resources)
 2. [GsDevKit Sample Project](#gsdevkit-sample-project)
    - [Install](#install)
    - [Setup](#setup)
@@ -66,17 +67,32 @@ Metacello new
 ```
 
 ####tODE
-The [tODE development environment for GsDevKit][17] provides:
+The [tODE development environment for GsDevKit][17] provides builtin support for using git:
 
 - direct support for calling git commands from the tODE command shell:
 
   ![tODE git man page][16]
 
-- git support from a number of the tools, like the `project list`:
+- git support from a number of the tools, like the `project list` menu:
 
   ![tODE project list git menu][18]
 
-###Git/Github Resources
+###Git Resources
+If you are not familiar with git, then the following resources should provide a good introduction:
+- [git - the simple guide][32] --- short and to the point, this tutorial covers the very basic commit commands that you will use 90% of the time
+- [Try Git: Code School][33] --- looks like it covers the same commands as [git - the simple guide][32], but again is hosted completely in your browser.
+- [Git Reference manual][34] for more advanced reading.
+
+Google is your friend. Once you are compfortable with the basics, if you run into a specific problem, it is likely that you will find the answer via google.
+
+###GitHub Resources
+If you are not familiar with GitHub, then the following [GitHub tutorials][24] are considered **required reading**:
+- [GitHub Hello world tutorial][21] --- the entire tutorial is hosted in your web browser.
+- [Getting your project on GitHub][23]. 
+- [Understanding the GitHub workflow][22].
+- [Contributing to Open Source][26].
+- [Forking Projects][25].
+- [Mastering Issues][27].
 
 ##GsDevKit Sample Project
 
@@ -103,3 +119,16 @@ The [tODE development environment for GsDevKit][17] provides:
 [16]: docs/gitManPage.png
 [17]: https://github.com/dalehenrich/tode#tode-the-object-centric-development-environment-
 [18]: docs/projectListGitMenu.png
+
+[21]: https://guides.github.com/activities/hello-world/
+[22]: https://guides.github.com/introduction/flow/
+[23]: https://guides.github.com/introduction/getting-your-project-on-github/
+[24]: https://guides.github.com/
+[25]: https://guides.github.com/activities/forking/
+[26]: https://guides.github.com/activities/contributing-to-open-source/
+[27]: https://guides.github.com/features/issues/
+
+[32]: http://rogerdudler.github.io/git-guide/
+[33]: https://try.github.io/levels/1/challenges/1
+[34]: http://git-scm.com/doc
+
