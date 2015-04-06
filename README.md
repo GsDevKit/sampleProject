@@ -26,7 +26,7 @@ lines of development takes seconds.</pre></a>
 
 while [GitHub has a superior collaboration model][10]:
 
-<a href=" http://kbroman.org/github_tutorial/pages/why.html#why-use-githubhttpgithubcom"><pre>Github lowers the barriers to collaboration. It’s easy to offer suggested changes to others’ code 
+<a href="http://kbroman.org/github_tutorial/pages/why.html#why-use-githubhttpgithubcom"><pre>Github lowers the barriers to collaboration. It’s easy to offer suggested changes to others’ code 
 through github.</pre></a>
 
 ##Install
