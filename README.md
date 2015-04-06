@@ -66,8 +66,15 @@ Metacello new
 ```
 
 ####tODE
+The [tODE development environment for GsDevKit][17] provides:
 
-![tODE git man page][16]
+- direct support for calling git commands from the tODE command shell:
+
+  ![tODE git man page][16]
+
+- git support from a number of the tools, like the `project list`:
+
+  ![tODE project list git menu][18]
 
 ###Git/Github Resources
 
@@ -93,4 +100,6 @@ Metacello new
 [13]: https://github.com/CampSmalltalk/Cypress/wiki#proposed-file-structure
 [14]: http://www.wiresong.ca/monticello/
 [15]: https://github.com/dalehenrich/metacello-work/blob/master/docs/MetacelloUserGuide.md#metacello-user-guide
-[16]: docs/mangit.png
+[16]: docs/gitManPage.png
+[17]: https://github.com/dalehenrich/tode#tode-the-object-centric-development-environment-
+[18]: docs/projectListGitMenu.png
