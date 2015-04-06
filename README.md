@@ -54,6 +54,7 @@ Metacello new
 
 "Load the External project from a local clone of the GitHub repository:
 
+    cd /opt/git
     git clone https://dalehenrich/External.git
     cd External
     git checkout master
