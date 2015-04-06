@@ -40,9 +40,7 @@ others’ code through github.</pre></a>
 
 ###Git for GsDevKit
 ####FileTree
-In my [Practical Git for Smalltalk][1] talk at [the 2012 STIC Conference][2] ([slides][3] and [video][4]), I discuss how [FileTree][12] opens the door to using git for source code control in Smalltalk:
-
-  - Cypress disk format and FileTree repository supports allows for the storage of Monticello compatible packages on disk, thus allowing one to use 
+In my [Practical Git for Smalltalk][1] talk at [the 2012 STIC Conference][2] ([slides][3] and [video][4]), I discuss how [FileTree][12] opens the door to using git for storing [Monticello][14] compatible packages on disk.
 
 ####Metacello
 
@@ -69,3 +67,5 @@ In my [Practical Git for Smalltalk][1] talk at [the 2012 STIC Conference][2] ([s
 [10]: https://help.github.com/categories/collaborating/
 [11]: http://git-scm.com/book/en/v1/Git-Branching
 [12]: https://github.com/dalehenrich/filetree
+
+[14]: http://www.wiresong.ca/monticello/
