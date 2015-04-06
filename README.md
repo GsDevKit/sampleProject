@@ -67,6 +67,8 @@ Metacello new
 
 ####tODE
 
+![tODE git man page][16]
+
 ###Git/Github Resources
 
 ##GsDevKit Sample Project
@@ -91,3 +93,4 @@ Metacello new
 [13]: https://github.com/CampSmalltalk/Cypress/wiki#proposed-file-structure
 [14]: http://www.wiresong.ca/monticello/
 [15]: https://github.com/dalehenrich/metacello-work/blob/master/docs/MetacelloUserGuide.md#metacello-user-guide
+[16]: mangit.png
