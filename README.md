@@ -52,7 +52,9 @@ Metacello new
   repository: 'github://dalehenrich/External:master/external/repository';
   load.
 
-"Load the External project from a local clone of the GitHub repository"
+"Load the External project from a local clone of the GitHub repository:
+   `git clone https://dalehenrich/External.git`
+"
 Metacello new
   baseline: 'External';
   repository: 'filetree:///opt/git/external/repository';
