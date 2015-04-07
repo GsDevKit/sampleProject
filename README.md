@@ -132,6 +132,7 @@ If you are not familiar with GitHub, then the following [GitHub tutorials][24] a
    export SAMPLE_HOME=`pwd`
    export PATH=$SAMPLE_HOME/bin:$PATH
    ```
+
 ##Basic GsDevKit Workflow
 1. Create stone
 1. Pull recent commits from GitHub
