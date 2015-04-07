@@ -137,12 +137,10 @@ If you are not familiar with GitHub, then the following [GitHub tutorials][24] a
 1. Create stone
 1. Pull recent commits from GitHub
 2. Load into stone
-
 1. Create local branch
 2. Modify and test code
 3. Review changes
 4. Commit 
-
 1. Push to GitHub
 2. Open Pull Request
 3. Discuss and review your code
