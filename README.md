@@ -8,13 +8,21 @@
      - [tODE](#tode)
    - [Git Resources](#git-resources)
    - [Github Resources](#github-resources)
-2. [GsDevKit Sample Project](#gsdevkit-sample-project)
-   - [Install](#install)
-   - [Setup](#setup)
-4. [Basic GsDevKit Workflow](#basic-gsdevkit-workflow)
-5. [Lessons](#lessons)
+2. [Installation](#installation)
+   - [Install GsDevKitHome](#install-gsdevkithome)
+   - [Install Sample Project](#install-sample-project)
+2. [Basic GsDevKit Workflow](#basic-gsdevkit-workflow)
+3. [Lessons](#lessons)
 
 ##Intro
+
+
+---
+
+Need to talk specifically about the sample project itself and it's purpose (now that I know it's purpose) ... git and github resources stuff may be shuffled off to separate doc ...
+
+---
+
 Git-based development for Smalltalk is a relatively new concept.
 
 Traditionally Smalltalk development environments have been hyper-focussed on image-based development.
@@ -64,6 +72,7 @@ Metacello new
   baseline: 'External';
   repository: 'filetree:///opt/git/external/repository';
   load.
+
 ```
 
 ####tODE
@@ -80,11 +89,11 @@ The [tODE development environment for GsDevKit][17] provides builtin support for
 ###Git Resources
 If you are not familiar with git, then the following resources should provide a good introduction:
 - [git - the simple guide][32] --- short and to the point, this tutorial covers the very basic commit commands that you will use 90% of the time
-- [Try Git: Code School][33] --- looks like it covers the same commands as [git - the simple guide][32], butis hosted completely in your browser.
+- [Try Git: Code School][33] --- looks like it covers the same commands as [git - the simple guide][32], but is hosted completely in your browser.
 - [Download git][31]
 - [Git Reference manual][34] for more advanced reading.
 
-Google is your friend. Once you are compfortable with the basics, if you run into a specific problem, it is likely that you will find the answer via google.
+Google is your friend. Once you are comfortable with the basics, if you run into a specific problem, it is likely that you will find the answer via google.
 
 ###GitHub Resources
 If you are not familiar with GitHub, then the following [GitHub tutorials][24] are considered **required reading**:
@@ -95,11 +104,49 @@ If you are not familiar with GitHub, then the following [GitHub tutorials][24] a
 - [Forking Projects][25].
 - [Mastering Issues][27].
 
-##GsDevKit Sample Project
 
-###Install
-###Setup
+##Installation
+1. [Install GsDevKitHome](#install-gsdevkithome)
+2. [Install Sample Project](#install-sample-project)
+
+###Install GsDevKitHome
+1. Install GsDevKitHome. Follow the first 3 steps of [the GsDevKitHome server installation process][40]:
+   - [Install operating system prerequisites][41].
+   - [Clone the gsDevKitHome project][42].
+   - [Define gsDevKitHome environment variables][43].
+2. If GsDevKit is installed on a remote server, then [install a tODE client on your local development machine][44].
+ 
+###Install Sample Project
+1. [Fork the Sample project][46]. 
+   You will be modifying your fork as part of the [Sample project lessons](#lessons).
+2. Clone the [Sample project][45] to the GsDevKit server:
+   ```Shell
+   git clone git@github.com/<your-github-user-name>/sampleProject.git
+   cd sampleProject
+   git checkout -b <your-project-branch-name>
+   git push origin <your-project-branch-name>
+   ```
+3. Define Sample project environment variables:
+   ```Shell
+   cd sampleProject
+   export SAMPLE_HOME=`pwd`
+   export PATH=$SAMPLE_HOME/bin:$PATH
+   ```
 ##Basic GsDevKit Workflow
+1. Create stone
+1. Pull recent commits from GitHub
+2. Load into stone
+
+1. Create local branch
+2. Modify and test code
+3. Review changes
+4. Commit 
+
+1. Push to GitHub
+2. Open Pull Request
+3. Discuss and review your code
+4. Merge and deploy
+
 ##Lessons
 
 [1]: http://www.stic.st/conferences/stic12/stic12-abstracts/practical-git-for-smalltalk/
@@ -134,3 +181,10 @@ If you are not familiar with GitHub, then the following [GitHub tutorials][24] a
 [33]: https://try.github.io/levels/1/challenges/1
 [34]: http://git-scm.com/doc
 
+[40]: https://github.com/GsDevKit/gsDevKitHome/tree/master#development-kit-server-installation
+[41]: https://github.com/GsDevKit/gsDevKitHome/tree/master#operating-system-prerequisites
+[42]: https://github.com/GsDevKit/gsDevKitHome/tree/master#clone-gsdevkithome
+[43]: https://github.com/GsDevKit/gsDevKitHome/tree/master#define-gsdevkithome-environment-variables
+[44]: https://github.com/GsDevKit/gsDevKitHome/blob/master/docs/clientInstallation.md#tode-client-installation
+[45]: https://github.com/GsDevKit/sampleProject
+[46]: https://github.com/GsDevKit/sampleProject/blob/master/README.md#fork-destination-box
